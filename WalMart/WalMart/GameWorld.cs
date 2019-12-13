@@ -9,13 +9,23 @@ namespace WalMart
     /// </summary>
     public class GameWorld : Game
     {
+        
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        private Texture2D player;
+        private Texture2D player2;
+        private Texture2D player3;
+        private Texture2D fruit;
+        private Texture2D medicin;
+        private Texture2D tool;
 
         public GameWorld()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            IsMouseVisible = true;
+            graphics.PreferredBackBufferWidth = 2400;
+            graphics.PreferredBackBufferHeight = 1200;
         }
 
         /// <summary>
@@ -39,6 +49,14 @@ namespace WalMart
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            spriteBatch.Begin();
+            player = Content.Load<Texture2D>("BasketBlack");
+            player2 = Content.Load<Texture2D>("BasketGreen");
+            player3 = Content.Load<Texture2D>("BasketRed");
+            fruit = Content.Load<Texture2D>("Apple");
+            medicin = Content.Load<Texture2D>("medicin");
+            tool = Content.Load<Texture2D>("Drill");
+            spriteBatch.End();
 
             // TODO: use this.Content to load your game content here
         }
@@ -74,7 +92,14 @@ namespace WalMart
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            spriteBatch.Begin();
+            spriteBatch.Draw(player,new Vector2(750,750),Color.Black);
+            spriteBatch.Draw(player2, new Vector2(500,500), Color.Green);
+            spriteBatch.Draw(player3, new Vector2(250,250), Color.Red);
+            spriteBatch.Draw(fruit, new Vector2(300, 300), Color.White);
+            spriteBatch.Draw(medicin, new Vector2(400, 400), Color.White);
+            spriteBatch.Draw(tool, new Vector2(800, 800), Color.White);
+            spriteBatch.End();
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
