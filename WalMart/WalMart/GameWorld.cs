@@ -15,9 +15,10 @@ namespace WalMart
         private Texture2D player;
         private Texture2D player2;
         private Texture2D player3;
-        private Texture2D fruit;
+        private Texture2D apple;
         private Texture2D medicin;
         private Texture2D tool;
+        private Texture2D banana;
 
         public GameWorld()
         {
@@ -53,9 +54,10 @@ namespace WalMart
             player = Content.Load<Texture2D>("BasketBlack");
             player2 = Content.Load<Texture2D>("BasketGreen");
             player3 = Content.Load<Texture2D>("BasketRed");
-            fruit = Content.Load<Texture2D>("Apple");
+            apple = Content.Load<Texture2D>("Apple");
             medicin = Content.Load<Texture2D>("medicin");
-            tool = Content.Load<Texture2D>("Drill");
+            tool = Content.Load<Texture2D>("Tools");
+            banana = Content.Load<Texture2D>("banana");
             spriteBatch.End();
 
             // TODO: use this.Content to load your game content here
@@ -96,9 +98,10 @@ namespace WalMart
             spriteBatch.Draw(player,new Vector2(750,750),Color.Black);
             spriteBatch.Draw(player2, new Vector2(500,500), Color.Green);
             spriteBatch.Draw(player3, new Vector2(250,250), Color.Red);
-            spriteBatch.Draw(fruit, new Vector2(300, 300), Color.White);
+            spriteBatch.Draw(apple, new Vector2(300, 300), Color.White);
             spriteBatch.Draw(medicin, new Vector2(400, 400), Color.White);
             spriteBatch.Draw(tool, new Vector2(800, 800), Color.White);
+            spriteBatch.Draw(banana, new Vector2(600, 600), Color.White);
             spriteBatch.End();
             // TODO: Add your drawing code here
 
