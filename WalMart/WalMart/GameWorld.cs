@@ -19,10 +19,23 @@ namespace WalMart
         private Texture2D banana;
         private Texture2D pear;
         private Texture2D burrito;
-        private Texture2D medicin;
+        private Texture2D coffee;
         private Texture2D hammer;
         private Texture2D measureTape;
+        private Texture2D shovel;
+        private Texture2D screwDriver;
         private Texture2D gold;
+        private Texture2D scrum;
+        private Texture2D nailPolish;
+        private Texture2D perfume;
+        private Texture2D toiletPaper;
+        private Texture2D toothPaste;
+        private Texture2D towel;
+        private Texture2D tv;
+        private Texture2D computer;
+        private Texture2D granateLuncher;
+        private Texture2D watch;
+        private Texture2D golf;
 
         public GameWorld()
         {
@@ -62,11 +75,24 @@ namespace WalMart
             pear = Content.Load<Texture2D>("Pear");
             banana = Content.Load<Texture2D>("banana");
             burrito = Content.Load<Texture2D>("Burrito");
-            medicin = Content.Load<Texture2D>("medicin");
+            coffee = Content.Load<Texture2D>("Coffee");
             hammer = Content.Load<Texture2D>("hammer");
+            screwDriver = Content.Load<Texture2D>("ScrewDriver");
+            shovel = Content.Load<Texture2D>("Shovel");
             measureTape = Content.Load<Texture2D>("MeasureTape");
-            
+            nailPolish = Content.Load<Texture2D>("NailPolish");
+            perfume = Content.Load<Texture2D>("Perfume");
+            toiletPaper = Content.Load<Texture2D>("ToiletPaper");
+            toothPaste = Content.Load<Texture2D>("ToothPaste");
+            towel = Content.Load<Texture2D>("Towel");
             gold = Content.Load<Texture2D>("gold");
+            scrum = Content.Load<Texture2D>("Scrum");
+            computer = Content.Load<Texture2D>("Computer");
+            tv = Content.Load<Texture2D>("Tv");
+            watch = Content.Load<Texture2D>("Watch");
+            golf = Content.Load<Texture2D>("Golf");
+            granateLuncher = Content.Load<Texture2D>("GranateLuncher");
+
             spriteBatch.End();
 
             // TODO: use this.Content to load your game content here
@@ -104,18 +130,33 @@ namespace WalMart
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
-            spriteBatch.Draw(player,new Vector2(750,750),Color.Black);
-            spriteBatch.Draw(player2, new Vector2(500,500), Color.Green);
-            spriteBatch.Draw(player3, new Vector2(250,250), Color.Red);
+            spriteBatch.Draw(player,new Vector2(100,100),Color.Black);
+            spriteBatch.Draw(player2, new Vector2(200,100), Color.Green);
+            spriteBatch.Draw(player3, new Vector2(300,100), Color.Red);
             spriteBatch.Draw(apple, new Vector2(300, 300), Color.White);
-            spriteBatch.Draw(burrito, new Vector2(900,300), Color.White);
-            spriteBatch.Draw(medicin, new Vector2(400, 300), Color.White);
-            spriteBatch.Draw(hammer, new Vector2(500, 300), Color.White);
-            spriteBatch.Draw(measureTape, new Vector2(1000,300), Color.White);
+            spriteBatch.Draw(burrito, new Vector2(400,300), Color.White);
+            spriteBatch.Draw(coffee, new Vector2(500, 300), Color.White);
             spriteBatch.Draw(banana, new Vector2(600, 300), Color.White);
-            spriteBatch.Draw(gold, new Vector2(700, 300), Color.White);
-            spriteBatch.Draw(pear, new Vector2(800, 300), Color.White);
+            spriteBatch.Draw(pear, new Vector2(700, 300), Color.White);
+            spriteBatch.Draw(hammer, new Vector2(300, 500), Color.White);
+            spriteBatch.Draw(measureTape, new Vector2(400,500), Color.White);
+            spriteBatch.Draw(shovel, new Vector2(500, 500), Color.White);
+            spriteBatch.Draw(screwDriver, new Vector2(600,500), Color.White);
+            spriteBatch.Draw(gold, new Vector2(300, 700), Color.White);
+            spriteBatch.Draw(scrum, new Vector2(400, 700), Color.White);
+            spriteBatch.Draw(nailPolish, new Vector2(300, 600), Color.White);
+            spriteBatch.Draw(toiletPaper, new Vector2(400,600), Color.White);
+            spriteBatch.Draw(perfume ,new Vector2(500,600), Color.White);
+            spriteBatch.Draw(toothPaste ,new Vector2(600,600), Color.White);
+            spriteBatch.Draw(towel ,new Vector2(700,600), Color.White);
+            spriteBatch.Draw(golf, new Vector2(300, 400), Color.White);
+            spriteBatch.Draw(granateLuncher, new Vector2(400, 400), Color.White);
+            spriteBatch.Draw(watch, new Vector2(500, 400), Color.White);
+            spriteBatch.Draw(computer, new Vector2(600, 400), Color.White);
+            spriteBatch.Draw(tv, new Vector2(700, 400), Color.White);
+
             spriteBatch.End();
+            
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
