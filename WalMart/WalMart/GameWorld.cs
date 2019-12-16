@@ -18,29 +18,9 @@ namespace WalMart
         private Texture2D player;
         private Texture2D player2;
         private Texture2D player3;
-        //private Texture2D apple;
-        //private Texture2D banana;
-        //private Texture2D pear;
-        //private Texture2D burrito;
-        //private Texture2D coffee;
-        //private Texture2D hammer;
-        //private Texture2D measureTape;
-        //private Texture2D shovel; 
-        //private Texture2D screwDriver;
-        //private Texture2D gold;
-        //private Texture2D scrum;
-        //private Texture2D nailPolish;
-        //private Texture2D perfume;
-        //private Texture2D toiletPaper;
-        //private Texture2D toothPaste;
-        //private Texture2D towel;
-        //private Texture2D tv;
-        //private Texture2D computer;
-        //private Texture2D granateLuncher;
-        //private Texture2D watch;
-        //private Texture2D golf;
+     
 
-        
+        ShoppingList shoppingList = new ShoppingList(); 
 
 
         public GameWorld()
@@ -74,7 +54,7 @@ namespace WalMart
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            ShoppingList shoppingList = new ShoppingList(); 
+            
             spriteBatch.Begin();
             player = Content.Load<Texture2D>("BasketBlack");
             player2 = Content.Load<Texture2D>("BasketGreen");
@@ -140,7 +120,7 @@ namespace WalMart
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            ShoppingList shoppingList = new ShoppingList(); 
+           
             spriteBatch.Begin();
             spriteBatch.Draw(player,new Vector2(100,100),Color.Black);
             spriteBatch.Draw(player2, new Vector2(200,100), Color.Green);
