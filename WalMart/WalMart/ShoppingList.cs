@@ -55,14 +55,8 @@ namespace WalMart
                     list[4] = rnd.Next(0, items.Length);
 
                 }
-
-
             }
-
-
-
         }
-
     }
 }
 

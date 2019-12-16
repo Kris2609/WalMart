@@ -11,7 +11,7 @@ namespace WalMart
     /// </summary>
     public class GameWorld : Game
     {
-        Level level = new Level();
+        
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -85,7 +85,7 @@ namespace WalMart
             shoppingList.ListGreen = Content.Load<Texture2D>("ListGreen");
             shoppingList.ListRed = Content.Load<Texture2D>("ListRed"); 
             Texture2D tileBlock = Content.Load<Texture2D>("TileBlock");
-            level.GetTexture(tileBlock);
+            Level.GetTexture(tileBlock);
 
             spriteBatch.End();
 
@@ -126,9 +126,7 @@ namespace WalMart
            
             spriteBatch.Begin();
             spriteBatch.Draw(player,new Vector2(100,100),Color.Black);
-            while (player.IsDisposed) 
-            { 
-            }
+            
             spriteBatch.Draw(player2, new Vector2(200,100), Color.Green);
             spriteBatch.Draw(player3, new Vector2(300,100), Color.Red);
             spriteBatch.Draw(shoppingList.apple, new Vector2(300, 300), Color.White);
@@ -155,8 +153,8 @@ namespace WalMart
             spriteBatch.Draw(shoppingList.ListBlack, new Rectangle(800, 400, 80, 80), Color.Black);
             spriteBatch.Draw(shoppingList.ListRed, new Rectangle(900, 400, 80, 80), Color.Red);
             spriteBatch.Draw(shoppingList.ListGreen, new Rectangle(1000, 400, 80, 80), Color.Green);
-
-            level.Draw(spriteBatch);
+            ShoppingList.SortItems().Draw(spriteBatch);
+            Level.Draw(spriteBatch);
             spriteBatch.End();
             
             // TODO: Add your drawing code here
