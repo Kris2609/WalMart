@@ -15,9 +15,9 @@ namespace WalMart
         SpriteFont font; 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        private Texture2D player;
-        private Texture2D player2;
-        private Texture2D player3;
+        private Texture2D playerBlack;
+        private Texture2D playerBlue;
+        private Texture2D playerGreen;
      
 
         ShoppingList shoppingList = new ShoppingList(); 
@@ -56,9 +56,9 @@ namespace WalMart
             spriteBatch = new SpriteBatch(GraphicsDevice);
             
             spriteBatch.Begin();
-            player = Content.Load<Texture2D>("BasketBlack");
-            player2 = Content.Load<Texture2D>("BasketGreen");
-            player3 = Content.Load<Texture2D>("BasketBlue");
+            playerBlack = Content.Load<Texture2D>("BasketBlack");
+            playerBlue = Content.Load<Texture2D>("BasketGreen");
+            playerGreen = Content.Load<Texture2D>("BasketBlue");
             
             shoppingList.apple = Content.Load<Texture2D>("Apple");
             shoppingList.pear = Content.Load<Texture2D>("Pear");
@@ -85,9 +85,9 @@ namespace WalMart
             shoppingList.ListGreen = Content.Load<Texture2D>("ListGreen");
             shoppingList.ListBlue = Content.Load<Texture2D>("ListRed"); 
             Texture2D tileBlock = Content.Load<Texture2D>("TileBlock");
-            font = Content.Load<SpriteFont>("Font"); 
+            font = Content.Load<SpriteFont>("Font");
 
-            
+            Pathfinder.GetTexture(tileBlock);
             Level.GetTexture(tileBlock);
 
             spriteBatch.End();
@@ -128,35 +128,36 @@ namespace WalMart
             GraphicsDevice.Clear(Color.CornflowerBlue);
            
             spriteBatch.Begin();
-            spriteBatch.Draw(player,new Vector2(1700,50),Color.White);
-            spriteBatch.Draw(player2, new Vector2(1700,550), Color.White);
-            spriteBatch.Draw(player3, new Vector2(1700,300), Color.White);
-            spriteBatch.Draw(shoppingList.apple, new Vector2(300, 300), Color.White);
-            spriteBatch.Draw(shoppingList.burrito, new Vector2(400,300), Color.White);
-            spriteBatch.Draw(shoppingList.coffee, new Vector2(500, 300), Color.White);
-            spriteBatch.Draw(shoppingList.banana, new Vector2(600, 300), Color.White);
-            spriteBatch.Draw(shoppingList.pear, new Vector2(700, 300), Color.White);
-            spriteBatch.Draw(shoppingList.hammer, new Vector2(300, 500), Color.White);
-            spriteBatch.Draw(shoppingList.measureTape, new Vector2(400,500), Color.White);
-            spriteBatch.Draw(shoppingList.shovel, new Vector2(500, 500), Color.White);
-            spriteBatch.Draw(shoppingList.screwDriver, new Vector2(600,500), Color.White);
-            spriteBatch.Draw(shoppingList.gold, new Vector2(300, 700), Color.White);
-            spriteBatch.Draw(shoppingList.scrum, new Vector2(400, 700), Color.White);
-            spriteBatch.Draw(shoppingList.nailPolish, new Vector2(300, 600), Color.White);
-            spriteBatch.Draw(shoppingList.toiletPaper, new Vector2(400,600), Color.White);
-            spriteBatch.Draw(shoppingList.perfume ,new Vector2(500,600), Color.White);
-            spriteBatch.Draw(shoppingList.toothPaste ,new Vector2(600,600), Color.White);
-            spriteBatch.Draw(shoppingList.towel ,new Vector2(700,600), Color.White);
-            spriteBatch.Draw(shoppingList.golf, new Vector2(300, 400), Color.White);
-            spriteBatch.Draw(shoppingList.granateLuncher, new Vector2(400, 400), Color.White);
-            spriteBatch.Draw(shoppingList.watch, new Vector2(500, 400), Color.White);
-            spriteBatch.Draw(shoppingList.computer, new Vector2(600, 400), Color.White);
-            spriteBatch.Draw(shoppingList.tv, new Vector2(700, 400), Color.White);
+            Level.Draw(spriteBatch);
+            spriteBatch.Draw(playerBlack,new Rectangle(1700,50, 70, 70),Color.White);
+            spriteBatch.Draw(playerBlue, new Rectangle(1700,550, 70, 70), Color.White);
+            spriteBatch.Draw(playerGreen, new Rectangle(1700,300, 70, 70), Color.White);
+            spriteBatch.Draw(shoppingList.apple, new Rectangle(300, 300, 70, 70), Color.White);
+            spriteBatch.Draw(shoppingList.burrito, new Rectangle(400,300, 70, 70), Color.White);
+            spriteBatch.Draw(shoppingList.coffee, new Rectangle(500, 300, 70, 70), Color.White);
+            spriteBatch.Draw(shoppingList.banana, new Rectangle(600, 300, 70, 70), Color.White);
+            spriteBatch.Draw(shoppingList.pear, new Rectangle(700, 300, 70, 70), Color.White);
+            spriteBatch.Draw(shoppingList.hammer, new Rectangle(300, 500, 70, 70), Color.White);
+            spriteBatch.Draw(shoppingList.measureTape, new Rectangle(400,500, 70, 70), Color.White);
+            spriteBatch.Draw(shoppingList.shovel, new Rectangle(500, 500, 70, 70), Color.White);
+            spriteBatch.Draw(shoppingList.screwDriver, new Rectangle(600,500, 70, 70), Color.White);
+            spriteBatch.Draw(shoppingList.gold, new Rectangle(300, 700, 70, 70), Color.White);
+            spriteBatch.Draw(shoppingList.scrum, new Rectangle(400, 700, 70, 70), Color.White);
+            spriteBatch.Draw(shoppingList.nailPolish, new Rectangle(300, 600, 70, 70), Color.White);
+            spriteBatch.Draw(shoppingList.toiletPaper, new Rectangle(400,600, 70, 70), Color.White);
+            spriteBatch.Draw(shoppingList.perfume ,new Rectangle(500,600, 70, 70), Color.White);
+            spriteBatch.Draw(shoppingList.toothPaste ,new Rectangle(600,600, 70, 70), Color.White);
+            spriteBatch.Draw(shoppingList.towel ,new Rectangle(700,600, 70, 70), Color.White);
+            spriteBatch.Draw(shoppingList.golf, new Rectangle(300, 400, 70, 70), Color.White);
+            spriteBatch.Draw(shoppingList.granateLuncher, new Rectangle(400, 400, 70, 70), Color.White);
+            spriteBatch.Draw(shoppingList.watch, new Rectangle(500, 400, 70, 70), Color.White);
+            spriteBatch.Draw(shoppingList.computer, new Rectangle(600, 400, 70, 70), Color.White);
+            spriteBatch.Draw(shoppingList.tv, new Rectangle(700, 400, 70, 70), Color.White);
             spriteBatch.Draw(shoppingList.ListBlack, new Rectangle(1700, 100, 200, 200), Color.Black);
             spriteBatch.Draw(shoppingList.ListBlue, new Rectangle(1700, 350, 200, 200), Color.Blue);
             spriteBatch.Draw(shoppingList.ListGreen, new Rectangle(1700, 600, 200, 200), Color.Green);
             SortItems(); 
-            Level.Draw(spriteBatch);
+            
             spriteBatch.End();
             
             // TODO: Add your drawing code here
@@ -187,7 +188,7 @@ namespace WalMart
                     list[4] = rnd.Next(0, items.Length).ToString();
 
 
-                    spriteBatch.DrawString(font, list[0], new Vector2(100, 100), Color.Black);
+                    spriteBatch.DrawString(font, list[0], new Vector2(1900, 700), Color.Black);
 
                 }
                 
