@@ -10,8 +10,8 @@ namespace WalMart.Astar
 {
    public static class Level
     {
-        public static int gridwidth = 52; //70
-        public static int gridHeight = 30; //36
+        public static int gridwidth = 25;
+        public static int gridHeight = 15;
         public static Texture2D TileBlock;
         public static Tile[,] grid = new Tile[gridwidth, gridHeight];
         static Random  rand = new Random(520);
@@ -36,49 +36,49 @@ namespace WalMart.Astar
                         //make a new tile
 
                         grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
-                        batch.Draw(TileBlock, new Rectangle(i * 32, j * 32, 32, 32), Color.Black);
+                        batch.Draw(TileBlock, new Rectangle(i * 64, j * 64, 64, 64), Color.Black);
                     }
                     else if (i == 9 && j > 5 && j < 20)
                     {
                         grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
-                        batch.Draw(TileBlock, new Rectangle(i * 32, j * 32, 32, 32), Color.Black);
+                        batch.Draw(TileBlock, new Rectangle(i * 64, j * 64, 64, 64), Color.Black);
                     }
                     else if (i == 14 && j > 5 && j < 20)
                     {
                         grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
-                        batch.Draw(TileBlock, new Rectangle(i * 32, j * 32, 32, 32), Color.Black);
+                        batch.Draw(TileBlock, new Rectangle(i * 64, j * 64, 64, 64), Color.Black);
                     }
                     else if (i == 18 && j > 5 && j < 20)
                     {
                         grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
-                        batch.Draw(TileBlock, new Rectangle(i * 32, j * 32, 32, 32), Color.Black);
+                        batch.Draw(TileBlock, new Rectangle(i * 64, j * 64, 64, 64), Color.Black);
                     }
                     else if (i > 4 && i < 19 && j == 2)
                     {
                         grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
-                        batch.Draw(TileBlock, new Rectangle(i * 32, j * 32, 32, 32), Color.Black);
+                        batch.Draw(TileBlock, new Rectangle(i * 64, j * 64, 64, 64), Color.Black);
                     }
                     else if (i > 4 && i < 19 && j == 23)
                     {
                         grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
-                        batch.Draw(TileBlock, new Rectangle(i * 32, j * 32, 32, 32), Color.Black);
+                        batch.Draw(TileBlock, new Rectangle(i * 64, j * 64, 64, 64), Color.Black);
                     }
                     else if(i == 1 && j == 12) //Start Tile
                     {
                         grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
-                        batch.Draw(TileBlock, new Rectangle(i * 32, j * 32, 32, 32), Color.Green);
+                        batch.Draw(TileBlock, new Rectangle(i * 64, j * 64, 64, 64), Color.Green);
                     }
                     else if (i == 23 && j == 12) //goal Tile
                     {
                         grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
-                        batch.Draw(TileBlock, new Rectangle(i * 32, j * 32, 32, 32), Color.Blue);
+                        batch.Draw(TileBlock, new Rectangle(i * 64, j * 64, 64, 64), Color.Blue);
                     }
                     else
                     {
                         //make a new tile
 
                         grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
-                        batch.Draw(TileBlock, new Rectangle(i * 32, j * 32, 32, 32), Color.White);
+                        batch.Draw(TileBlock, new Rectangle(i * 64, j * 64, 64, 64), Color.White);
                     }
                    
                 }
