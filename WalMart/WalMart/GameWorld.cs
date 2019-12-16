@@ -128,9 +128,9 @@ namespace WalMart
             GraphicsDevice.Clear(Color.CornflowerBlue);
            
             spriteBatch.Begin();
-            spriteBatch.Draw(player,new Vector2(1700,50),Color.Black);
-            spriteBatch.Draw(player2, new Vector2(1700,300), Color.Blue);
-            spriteBatch.Draw(player3, new Vector2(1700,550), Color.Green);
+            spriteBatch.Draw(player,new Vector2(1700,50),Color.White);
+            spriteBatch.Draw(player2, new Vector2(1700,550), Color.White);
+            spriteBatch.Draw(player3, new Vector2(1700,300), Color.White);
             spriteBatch.Draw(shoppingList.apple, new Vector2(300, 300), Color.White);
             spriteBatch.Draw(shoppingList.burrito, new Vector2(400,300), Color.White);
             spriteBatch.Draw(shoppingList.coffee, new Vector2(500, 300), Color.White);
