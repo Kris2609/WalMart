@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,12 @@ namespace WalMart.Astar
 {
     public class Pathfinder
     {
+        public static Texture2D TileBlock;
         public Tile[,] grid = new Tile[Level.gridwidth, Level.gridHeight];
         public Vector2 startTile;
         public Vector2 goal;
         public Vector2 currentTile;
+        List<Vector2> pathTiles = new List<Vector2>();
 
         //create the lists that stores allready checked tiles
         List<Vector2> closedList = new List<Vector2>();
@@ -126,17 +129,17 @@ namespace WalMart.Astar
                 }
             }
             //Make start and goal tile red (for testing)
-           
+
 
             //show the path
-            //ShowPath();
+            ShowPath();
         }
         public void ShowPath()
         {
             bool startFound = false;
 
             Vector2 currentTile = goal;
-            List<Vector2> pathTiles = new List<Vector2>();
+           
 
             while (startFound == false)
             {
@@ -149,26 +152,28 @@ namespace WalMart.Astar
                     if(adjacentTile.X == startTile.X && adjacentTile.Y == startTile.Y)
                     {
                         startFound = true;
-                        // it has to be inside the closed as well as the inside the open list
-                        if(closedList.Contains(adjacentTile) || openList.Contains(adjacentTile))
+                        break;
+                    }
+                    // it has to be inside the closed as well as the inside the open list
+                    if (closedList.Contains(adjacentTile) || openList.Contains(adjacentTile))
+                    {
+                        if (grid[(int)adjacentTile.X, (int)adjacentTile.Y].cost <= grid[(int)currentTile.X, (int)currentTile.Y].cost
+                            && grid[(int)adjacentTile.X, (int)adjacentTile.Y].cost > 0)
                         {
-                            if(grid[(int)adjacentTile.X,(int)adjacentTile.Y].cost <= grid[(int)currentTile.X, (int)currentTile.Y].cost
-                                && grid[(int)adjacentTile.X, (int)adjacentTile.Y].cost > 0)
-                            {
-                                //change the current Tile
-                                currentTile = adjacentTile;
+                            //change the current Tile
+                            currentTile = adjacentTile;
 
-                                //add this adjacent tile to the path list
-                                pathTiles.Add(adjacentTile);
+                            //add this adjacent tile to the path list
+                            pathTiles.Add(adjacentTile);
 
-                                //Change colors for final path (for testing)
+                            //Change colors for final path (for testing)
 
 
-                                break;
-                            }
+                            
                         }
                     }
                 }
+               
             }
         }
         //get the tile whit lowest value
@@ -233,7 +238,40 @@ namespace WalMart.Astar
 
             return manhatten;
         }
-
-
+        public static void GetTexture(Texture2D texture)
+        {
+            TileBlock = texture;
+        }
+        public void Draw(SpriteBatch batch)
+        {
+            foreach (Vector2 pathlist in pathTiles)
+            {
+                for (int i = 0; i < Level.gridwidth; i++)
+                {
+                    for (int j = 0; j < Level.gridHeight; j++)
+                    {
+                        if (grid[(int)pathlist.X, (int)pathlist.Y] == grid[i,j])
+                        {
+                            grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
+                            batch.Draw(TileBlock, new Rectangle(i * 32, j * 32, 32, 32), Color.Red);
+                        }
+                    }
+                }
+            }
+            foreach (Vector2 openlist in openList)
+            {
+                for (int i = 0; i < Level.gridwidth; i++)
+                {
+                    for (int j = 0; j < Level.gridHeight; j++)
+                    {
+                        if (grid[(int)openlist.X, (int)openlist.Y] == grid[i, j])
+                        {
+                            grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
+                            batch.Draw(TileBlock, new Rectangle(i * 32, j * 32, 32, 32), Color.Brown);
+                        }
+                    }
+                }
+            }
+        }
     }
 }

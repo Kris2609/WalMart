@@ -83,6 +83,7 @@ namespace WalMart
             shoppingList.granateLuncher = Content.Load<Texture2D>("GranateLuncher");
             Texture2D tileBlock = Content.Load<Texture2D>("TileBlock");
             Level.GetTexture(tileBlock);
+            Pathfinder.GetTexture(tileBlock);
 
             spriteBatch.End();
 
@@ -147,6 +148,7 @@ namespace WalMart
             spriteBatch.Draw(shoppingList.computer, new Vector2(600, 400), Color.White);
             spriteBatch.Draw(shoppingList.tv, new Vector2(700, 400), Color.White);
             Level.Draw(spriteBatch);
+            
             spriteBatch.End();
             
             // TODO: Add your drawing code here
