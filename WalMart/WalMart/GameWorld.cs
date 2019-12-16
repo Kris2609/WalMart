@@ -1,8 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 using WalMart.Astar;
-using System; 
 
 namespace WalMart
 {
@@ -12,7 +12,7 @@ namespace WalMart
     public class GameWorld : Game
     {
         
-
+        SpriteFont font; 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         private Texture2D player;
@@ -85,7 +85,10 @@ namespace WalMart
             shoppingList.ListGreen = Content.Load<Texture2D>("ListGreen");
             shoppingList.ListRed = Content.Load<Texture2D>("ListRed"); 
             Texture2D tileBlock = Content.Load<Texture2D>("TileBlock");
-            Level.GetTexture(tileBlock);
+            font = Content.Load<SpriteFont>("Font"); 
+
+            
+           // Level.GetTexture(tileBlock);
 
             spriteBatch.End();
 
@@ -153,6 +156,9 @@ namespace WalMart
             spriteBatch.Draw(shoppingList.ListBlack, new Rectangle(800, 400, 80, 80), Color.Black);
             spriteBatch.Draw(shoppingList.ListRed, new Rectangle(900, 400, 80, 80), Color.Red);
             spriteBatch.Draw(shoppingList.ListGreen, new Rectangle(1000, 400, 80, 80), Color.Green);
+
+            SortItems(); 
+           
             
             Level.Draw(spriteBatch);
             spriteBatch.End();
@@ -160,6 +166,38 @@ namespace WalMart
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
+        }
+        public void SortItems()
+        {
+            Texture2D[] items = {shoppingList.screwDriver, shoppingList.apple, shoppingList.banana, shoppingList.burrito, shoppingList.coffee,
+                                shoppingList.computer, shoppingList.gold, shoppingList.golf, shoppingList.granateLuncher, shoppingList.hammer,
+                                shoppingList.measureTape, shoppingList.shovel, shoppingList.nailPolish, shoppingList.pear, shoppingList.perfume,
+                                shoppingList.screwDriver, shoppingList.scrum, shoppingList.toiletPaper, shoppingList.toothPaste, shoppingList.towel,
+                                shoppingList.tv, shoppingList.watch}; 
+            string[] list = new string[5];
+            Random rnd = new Random();
+
+
+            foreach (Texture2D item in items)
+            {
+                for (int i = 0; i <= 5; i++)
+                {
+
+
+                    list[0] = rnd.Next(0, items.Length).ToString();
+                    list[1] = rnd.Next(0, items.Length).ToString();
+                    list[2] = rnd.Next(0, items.Length).ToString();
+                    list[3] = rnd.Next(0, items.Length).ToString();
+                    list[4] = rnd.Next(0, items.Length).ToString();
+
+
+                    spriteBatch.DrawString(font, list[0], new Vector2(100, 100), Color.Black);
+
+                }
+                
+            }
+
+
         }
     }
 }
