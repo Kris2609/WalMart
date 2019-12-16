@@ -153,7 +153,7 @@ namespace WalMart
             spriteBatch.Draw(shoppingList.ListBlack, new Rectangle(800, 400, 80, 80), Color.Black);
             spriteBatch.Draw(shoppingList.ListRed, new Rectangle(900, 400, 80, 80), Color.Red);
             spriteBatch.Draw(shoppingList.ListGreen, new Rectangle(1000, 400, 80, 80), Color.Green);
-            ShoppingList.SortItems().Draw(spriteBatch);
+            
             Level.Draw(spriteBatch);
             spriteBatch.End();
             
