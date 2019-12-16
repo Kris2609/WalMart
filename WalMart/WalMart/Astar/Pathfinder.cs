@@ -117,6 +117,7 @@ namespace WalMart.Astar
                                     tile.total = tile.cost + tile.heuristic;
 
                                     //make tile green (for testing)
+
                                 }
                             }
                         }
@@ -125,7 +126,7 @@ namespace WalMart.Astar
                 }
             }
             //Make start and goal tile red (for testing)
-
+           
 
             //show the path
             //ShowPath();

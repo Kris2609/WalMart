@@ -11,7 +11,7 @@ namespace WalMart
     /// </summary>
     public class GameWorld : Game
     {
-        Level level = new Level();
+        
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -82,7 +82,7 @@ namespace WalMart
             shoppingList.golf = Content.Load<Texture2D>("Golf");
             shoppingList.granateLuncher = Content.Load<Texture2D>("GranateLuncher");
             Texture2D tileBlock = Content.Load<Texture2D>("TileBlock");
-            level.GetTexture(tileBlock);
+            Level.GetTexture(tileBlock);
 
             spriteBatch.End();
 
@@ -146,7 +146,7 @@ namespace WalMart
             spriteBatch.Draw(shoppingList.watch, new Vector2(500, 400), Color.White);
             spriteBatch.Draw(shoppingList.computer, new Vector2(600, 400), Color.White);
             spriteBatch.Draw(shoppingList.tv, new Vector2(700, 400), Color.White);
-            level.Draw(spriteBatch);
+            Level.Draw(spriteBatch);
             spriteBatch.End();
             
             // TODO: Add your drawing code here
