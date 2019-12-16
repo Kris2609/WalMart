@@ -88,7 +88,7 @@ namespace WalMart
             font = Content.Load<SpriteFont>("Font"); 
 
             
-           // Level.GetTexture(tileBlock);
+            Level.GetTexture(tileBlock);
 
             spriteBatch.End();
 
