@@ -126,6 +126,49 @@ namespace WalMart.Astar
             }
             //Make start and goal tile red (for testing)
 
+
+            //show the path
+            ShowPath();
+        }
+        public void ShowPath()
+        {
+            bool startFound = false;
+
+            Vector2 currentTile = goal;
+            List<Vector2> pathTiles = new List<Vector2>();
+
+            while (startFound == false)
+            {
+                List<Vector2> adjacentTiles = GetAdjacentTiles(currentTile);
+
+                //Check to see what newest current tile
+                foreach (Vector2 adjacentTile in adjacentTiles)
+                {
+                    //Check if it is the start tile
+                    if(adjacentTile.X == startTile.X && adjacentTile.Y == startTile.Y)
+                    {
+                        startFound = true;
+                        // it has to be inside the closed as well as the inside the open list
+                        if(closedList.Contains(adjacentTile) || openList.Contains(adjacentTile))
+                        {
+                            if(grid[(int)adjacentTile.X,(int)adjacentTile.Y].cost <= grid[(int)currentTile.X, (int)currentTile.Y].cost
+                                && grid[(int)adjacentTile.X, (int)adjacentTile.Y].cost > 0)
+                            {
+                                //change the current Tile
+                                currentTile = adjacentTile;
+
+                                //add this adjacent tile to the path list
+                                pathTiles.Add(adjacentTile);
+
+                                //Change colors for final path (for testing)
+
+
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
         }
         //get the tile whit lowest value
         public Vector2 GetTileWhitLowestTotal(List<Vector2> openList)
