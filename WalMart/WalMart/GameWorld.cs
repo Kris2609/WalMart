@@ -86,6 +86,7 @@ namespace WalMart
             shoppingList.ListBlue = Content.Load<Texture2D>("ListRed"); 
             Texture2D tileBlock = Content.Load<Texture2D>("TileBlock");
             Level.GetTexture(tileBlock);
+            Pathfinder.GetTexture(tileBlock);
 
             spriteBatch.End();
 
@@ -155,6 +156,7 @@ namespace WalMart
             spriteBatch.Draw(shoppingList.ListGreen, new Rectangle(1700, 700, 200, 200), Color.Green);
             
             Level.Draw(spriteBatch);
+            
             spriteBatch.End();
             
             // TODO: Add your drawing code here
