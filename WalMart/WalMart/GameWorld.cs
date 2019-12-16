@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using WalMart.Astar;
 
 namespace WalMart
 {
@@ -9,7 +10,8 @@ namespace WalMart
     /// </summary>
     public class GameWorld : Game
     {
-        
+        Level level = new Level();
+
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         private Texture2D player;
@@ -37,6 +39,9 @@ namespace WalMart
         private Texture2D watch;
         private Texture2D golf;
 
+        
+
+
         public GameWorld()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -44,6 +49,7 @@ namespace WalMart
             IsMouseVisible = true;
             graphics.PreferredBackBufferWidth = 2400;
             graphics.PreferredBackBufferHeight = 1200;
+
         }
 
         /// <summary>
@@ -92,6 +98,8 @@ namespace WalMart
             watch = Content.Load<Texture2D>("Watch");
             golf = Content.Load<Texture2D>("Golf");
             granateLuncher = Content.Load<Texture2D>("GranateLuncher");
+            Texture2D tileBlock = Content.Load<Texture2D>("TileBlock");
+            level.GetTexture(tileBlock);
 
             spriteBatch.End();
 
@@ -154,7 +162,7 @@ namespace WalMart
             spriteBatch.Draw(watch, new Vector2(500, 400), Color.White);
             spriteBatch.Draw(computer, new Vector2(600, 400), Color.White);
             spriteBatch.Draw(tv, new Vector2(700, 400), Color.White);
-
+            level.Draw(spriteBatch);
             spriteBatch.End();
             
             // TODO: Add your drawing code here

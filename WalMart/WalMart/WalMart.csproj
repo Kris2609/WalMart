@@ -41,6 +41,9 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Astar\Level.cs" />
+    <Compile Include="Astar\Pathfinder.cs" />
+    <Compile Include="Astar\Tile.cs" />
     <Compile Include="GameWorld.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
