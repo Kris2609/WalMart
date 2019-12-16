@@ -110,8 +110,11 @@ namespace WalMart.Astar
                                     //Calculate the cost
                                     tile.cost = grid[(int)currentTile.X, (int)currentTile.Y].cost + 1;
 
+                                    //Calculate the manhatten distance
+                                    tile.heuristic = ManhattanDistance(adjacentTile);
+
                                     //calculate the total amount
-                                    tile.total = tile.cost;
+                                    tile.total = tile.cost + tile.heuristic;
 
                                     //make tile green (for testing)
                                 }
@@ -177,6 +180,14 @@ namespace WalMart.Astar
 
 
             return adjacentTiles;
+        }
+
+        //calculate the manhatten disctance
+        public int ManhattanDistance(Vector2 adjacentTile)
+        {
+            int manhatten = Math.Abs((int)(goal.X - adjacentTile.X)) + Math.Abs((int)(goal.Y - adjacentTile.Y));
+
+            return manhatten;
         }
 
 
