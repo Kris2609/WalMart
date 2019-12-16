@@ -32,6 +32,9 @@ namespace WalMart
         public Texture2D watch;
         public Texture2D golf;
 
+        public Texture2D ListBlack;
+        public Texture2D ListGreen;
+        public Texture2D ListBlue; 
 
 
         public static void SortItems()
@@ -52,14 +55,8 @@ namespace WalMart
                     list[4] = rnd.Next(0, items.Length);
 
                 }
-
-
             }
-
-
-
         }
-
     }
 }
 
