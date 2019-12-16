@@ -10,9 +10,14 @@ namespace WalMart.Astar
 {
    public static class Level
     {
-        public static int gridwidth = 24; //70
-        public static int gridHeight = 14; //36
+        public static int gridwidth = 24; 
+        public static int gridHeight = 14; 
         public static Texture2D TileBlock;
+        public static Texture2D apple;
+        public static Texture2D gold;
+        public static Texture2D tv;
+        public static Texture2D hammer;
+        public static Texture2D nailPolish;
         public static Tile[,] grid = new Tile[gridwidth, gridHeight];
         static Random  rand = new Random(520);
 
@@ -23,6 +28,11 @@ namespace WalMart.Astar
         public static void GetTexture(Texture2D texture)
         {
             Level.TileBlock = texture;
+            Level.apple = ShoppingList.apple;
+            Level.gold = ShoppingList.gold;
+            Level.tv = ShoppingList.tv;
+            Level.nailPolish = ShoppingList.nailPolish;
+
         }
         public static void Draw(SpriteBatch batch)
         {
@@ -36,28 +46,28 @@ namespace WalMart.Astar
                         //make a new tile
 
                         grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
-                        batch.Draw(TileBlock, new Rectangle(i * 70, j * 70, 70, 70), Color.Black);
+                        batch.Draw(apple, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i == 10 && j > 4 && j < 11)
                     {
                         grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
-                        batch.Draw(TileBlock, new Rectangle(i * 70, j * 70, 70, 70), Color.Black);
+                        batch.Draw(gold, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                    
                     else if (i == 15 && j > 4 && j < 11)
                     {
                         grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
-                        batch.Draw(TileBlock, new Rectangle(i * 70, j * 70, 70, 70), Color.Black);
+                        batch.Draw(tv, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i > 4 && i < 16 && j == 1)
                     {
                         grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
-                        batch.Draw(TileBlock, new Rectangle(i * 70, j * 70, 70, 70), Color.Black);
+                        batch.Draw(tv, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i > 4 && i < 16 && j == 13)
                     {
                         grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
-                        batch.Draw(TileBlock, new Rectangle(i * 70, j * 70, 70, 70), Color.Black);
+                        batch.Draw(nailPolish, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if(i == 23 && j == 4) //Start Tile
                     {
