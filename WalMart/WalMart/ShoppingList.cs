@@ -5,14 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace WalMart
 {
 
     public class ShoppingList
     {
-
-        public Texture2D apple;
+        public Texture2D apple; 
         public Texture2D banana;
         public Texture2D pear;
         public Texture2D burrito;
@@ -36,6 +34,32 @@ namespace WalMart
 
         public Texture2D ListBlack;
         public Texture2D ListGreen;
-        public Texture2D ListRed;
+        public Texture2D ListBlue; 
+
+
+        public static void SortItems()
+        {
+            Object[] list = new Object[5];
+            Random rnd = new Random();
+            ShoppingList[] items = new ShoppingList[21];
+
+            foreach (ShoppingList item in items)
+            {
+                for (int i = 0; i <= 5; i++)
+                {
+
+                    list[0] = rnd.Next(0, items.Length);
+                    list[1] = rnd.Next(0, items.Length);
+                    list[2] = rnd.Next(0, items.Length);
+                    list[3] = rnd.Next(0, items.Length);
+                    list[4] = rnd.Next(0, items.Length);
+
+                }
+            }
+        }
     }
 }
+
+
+
+
