@@ -32,6 +32,9 @@ namespace WalMart
         public Texture2D watch;
         public Texture2D golf;
 
+        public Texture2D ListBlack;
+        public Texture2D ListGreen;
+        public Texture2D ListRed; 
 
 
         public static void SortItems()

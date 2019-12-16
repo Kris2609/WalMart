@@ -81,6 +81,9 @@ namespace WalMart
             shoppingList.watch = Content.Load<Texture2D>("Watch");
             shoppingList.golf = Content.Load<Texture2D>("Golf");
             shoppingList.granateLuncher = Content.Load<Texture2D>("GranateLuncher");
+            shoppingList.ListBlack = Content.Load<Texture2D>("ListBlack");
+            shoppingList.ListGreen = Content.Load<Texture2D>("ListGreen");
+            shoppingList.ListRed = Content.Load<Texture2D>("ListRed"); 
             Texture2D tileBlock = Content.Load<Texture2D>("TileBlock");
             level.GetTexture(tileBlock);
 
@@ -123,6 +126,9 @@ namespace WalMart
            
             spriteBatch.Begin();
             spriteBatch.Draw(player,new Vector2(100,100),Color.Black);
+            while (player.IsDisposed) 
+            { 
+            }
             spriteBatch.Draw(player2, new Vector2(200,100), Color.Green);
             spriteBatch.Draw(player3, new Vector2(300,100), Color.Red);
             spriteBatch.Draw(shoppingList.apple, new Vector2(300, 300), Color.White);
@@ -146,6 +152,10 @@ namespace WalMart
             spriteBatch.Draw(shoppingList.watch, new Vector2(500, 400), Color.White);
             spriteBatch.Draw(shoppingList.computer, new Vector2(600, 400), Color.White);
             spriteBatch.Draw(shoppingList.tv, new Vector2(700, 400), Color.White);
+            spriteBatch.Draw(shoppingList.ListBlack, new Rectangle(800, 400, 80, 80), Color.Black);
+            spriteBatch.Draw(shoppingList.ListRed, new Rectangle(900, 400, 80, 80), Color.Red);
+            spriteBatch.Draw(shoppingList.ListGreen, new Rectangle(1000, 400, 80, 80), Color.Green);
+
             level.Draw(spriteBatch);
             spriteBatch.End();
             
