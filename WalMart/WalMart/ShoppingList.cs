@@ -34,7 +34,7 @@ namespace WalMart
 
         public Texture2D ListBlack;
         public Texture2D ListGreen;
-        public Texture2D ListRed; 
+        public Texture2D ListBlue; 
 
 
         public static void SortItems()

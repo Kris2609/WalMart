@@ -10,8 +10,8 @@ namespace WalMart.Astar
 {
    public static class Level
     {
-        public static int gridwidth = 25;
-        public static int gridHeight = 25;
+        public static int gridwidth = 52; //70
+        public static int gridHeight = 30; //36
         public static Texture2D TileBlock;
         public static Tile[,] grid = new Tile[gridwidth, gridHeight];
         static Random  rand = new Random(520);
