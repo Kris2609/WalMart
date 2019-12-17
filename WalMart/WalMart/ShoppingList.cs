@@ -37,26 +37,9 @@ namespace WalMart
         public Texture2D ListBlue; 
 
 
-        public static void SortItems()
-        {
-            Object[] list = new Object[5];
-            Random rnd = new Random();
-            ShoppingList[] items = new ShoppingList[21];
 
-            foreach (ShoppingList item in items)
-            {
-                for (int i = 0; i <= 5; i++)
-                {
-
-                    list[0] = rnd.Next(0, items.Length);
-                    list[1] = rnd.Next(0, items.Length);
-                    list[2] = rnd.Next(0, items.Length);
-                    list[3] = rnd.Next(0, items.Length);
-                    list[4] = rnd.Next(0, items.Length);
-
-                }
-            }
-        }
+            
+        
     }
 }
 
