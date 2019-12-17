@@ -42,7 +42,7 @@ namespace WalMart
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+          
             base.Initialize();
         }
 
@@ -58,7 +58,7 @@ namespace WalMart
             spriteBatch.Begin();
             player = Content.Load<Texture2D>("BasketBlack");
             player2 = Content.Load<Texture2D>("BasketGreen");
-            player3 = Content.Load<Texture2D>("BasketRed");
+            player3 = Content.Load<Texture2D>("BasketBlue");
             
             shoppingList.apple = Content.Load<Texture2D>("Apple");
             shoppingList.pear = Content.Load<Texture2D>("Pear");
@@ -83,12 +83,13 @@ namespace WalMart
             shoppingList.granateLuncher = Content.Load<Texture2D>("GranateLuncher");
             shoppingList.ListBlack = Content.Load<Texture2D>("ListBlack");
             shoppingList.ListGreen = Content.Load<Texture2D>("ListGreen");
-            shoppingList.ListRed = Content.Load<Texture2D>("ListRed"); 
+            shoppingList.ListBlue = Content.Load<Texture2D>("ListRed"); 
             Texture2D tileBlock = Content.Load<Texture2D>("TileBlock");
             font = Content.Load<SpriteFont>("Font"); 
 
             
             Level.GetTexture(tileBlock);
+            Pathfinder.GetTexture(tileBlock);
 
             spriteBatch.End();
 
@@ -128,6 +129,7 @@ namespace WalMart
             GraphicsDevice.Clear(Color.CornflowerBlue);
            
             spriteBatch.Begin();
+            Level.Draw(spriteBatch);
             spriteBatch.Draw(player,new Vector2(100,100),Color.Black);
             
             spriteBatch.Draw(player2, new Vector2(200,100), Color.Green);
@@ -154,50 +156,33 @@ namespace WalMart
             spriteBatch.Draw(shoppingList.computer, new Vector2(600, 400), Color.White);
             spriteBatch.Draw(shoppingList.tv, new Vector2(700, 400), Color.White);
             spriteBatch.Draw(shoppingList.ListBlack, new Rectangle(800, 400, 80, 80), Color.Black);
-            spriteBatch.Draw(shoppingList.ListRed, new Rectangle(900, 400, 80, 80), Color.Red);
+            spriteBatch.Draw(shoppingList.ListBlue, new Rectangle(900, 400, 80, 80), Color.Red);
             spriteBatch.Draw(shoppingList.ListGreen, new Rectangle(1000, 400, 80, 80), Color.Green);
 
-            SortItems(); 
-           
-            
-            Level.Draw(spriteBatch);
+            spriteBatch.DrawString(font, GetRandomTexture().Name, new Vector2(1800, 100), Color.Black);
+
+
+            // Level.Draw(spriteBatch);
             spriteBatch.End();
             
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
         }
-        public void SortItems()
-        {
-            Texture2D[] items = {shoppingList.screwDriver, shoppingList.apple, shoppingList.banana, shoppingList.burrito, shoppingList.coffee,
+            
+       
+            Random rnd = new Random(); 
+            private Texture2D GetRandomTexture()
+            {
+                    Texture2D[] items = {shoppingList.screwDriver, shoppingList.apple, shoppingList.banana, shoppingList.burrito, shoppingList.coffee,
                                 shoppingList.computer, shoppingList.gold, shoppingList.golf, shoppingList.granateLuncher, shoppingList.hammer,
                                 shoppingList.measureTape, shoppingList.shovel, shoppingList.nailPolish, shoppingList.pear, shoppingList.perfume,
                                 shoppingList.screwDriver, shoppingList.scrum, shoppingList.toiletPaper, shoppingList.toothPaste, shoppingList.towel,
-                                shoppingList.tv, shoppingList.watch}; 
-            string[] list = new string[5];
-            Random rnd = new Random();
+                                shoppingList.tv, shoppingList.watch};
 
+            var randomItem = rnd.Next(0, 21);
 
-            foreach (Texture2D item in items)
-            {
-                for (int i = 0; i <= 5; i++)
-                {
-
-
-                    list[0] = rnd.Next(0, items.Length).ToString();
-                    list[1] = rnd.Next(0, items.Length).ToString();
-                    list[2] = rnd.Next(0, items.Length).ToString();
-                    list[3] = rnd.Next(0, items.Length).ToString();
-                    list[4] = rnd.Next(0, items.Length).ToString();
-
-
-                    spriteBatch.DrawString(font, list[0], new Vector2(100, 100), Color.Black);
-
-                }
-                
+                 return items[randomItem]; 
             }
-
-
-        }
     }
 }

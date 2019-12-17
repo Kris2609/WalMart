@@ -253,7 +253,7 @@ namespace WalMart.Astar
                         if (grid[(int)pathlist.X, (int)pathlist.Y] == grid[i,j])
                         {
                             grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
-                            batch.Draw(TileBlock, new Rectangle(i * 70, j * 70, 70, 70), Color.Red);
+                            batch.Draw(TileBlock, new Rectangle(i * 70, j * 70, 70, 70), Color.Blue);
                         }
                     }
                 }
