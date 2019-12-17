@@ -1,5 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using WalMart;
+using WalMart.Astar;
 
 namespace TestWalMart
 {
@@ -9,6 +11,7 @@ namespace TestWalMart
         [TestMethod]
         public void TestMethod1()
         {
+           
         }
     }
 }

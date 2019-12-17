@@ -12,14 +12,15 @@ namespace WalMart.Astar
     {
         public static Texture2D TileBlock;
         public Tile[,] grid = new Tile[Level.gridwidth, Level.gridHeight];
-        public Vector2 startTile;
+        public Vector2 startTile = new Vector2(0, 0);
         public Vector2 goal;
         public Vector2 currentTile;
-        List<Vector2> pathTiles = new List<Vector2>();
+        
+        CustomList<Vector2> pathTiles = new CustomList<Vector2>();
 
         //create the lists that stores allready checked tiles
-        List<Vector2> closedList = new List<Vector2>();
-        List<Vector2> openList = new List<Vector2>();
+        CustomList<Vector2> closedList = new CustomList<Vector2>();
+        CustomList<Vector2> openList = new CustomList<Vector2>();
 
         public Pathfinder(Tile[,] grid)
         {
@@ -73,12 +74,13 @@ namespace WalMart.Astar
             if (canSearch)
             {
                 //add the starting tile to open list
-                openList.Add(startTile);
+                
+                openList.addItem(startTile);
                 currentTile = new Vector2(-1, -1);
 
                 //while openlist not empty
 
-            while(openList.Count != 0)
+            while(openList.Count() != null)
                 {
                     currentTile = GetTileWhitLowestTotal(openList);
 
@@ -91,22 +93,22 @@ namespace WalMart.Astar
                     else
                     {
                         //move current tile to clost list and remove it from the open list
-                        openList.Remove(currentTile);
-                        closedList.Add(currentTile);
+                        openList.removeItem(currentTile);
+                        closedList.addItem(currentTile);
 
                         //get all adjacentTiles
-                        List<Vector2> adjacentTiles = GetAdjacentTiles(currentTile);
+                        CustomList<Vector2> adjacentTiles = GetAdjacentTiles(currentTile);
 
-                        foreach (Vector2 adjacentTile in adjacentTiles)
+                        foreach (Vector2 adjacentTile in adjacentTiles.Count())
                         {
-                            //adjacent tike can not be in open list
+                            //adjacent tile can not be in open list
                             if (!openList.Contains(adjacentTile))
                             {
-                                //adjacent tike can not be in closed list
+                                //adjacent tile can not be in closed list
                                 if (!closedList.Contains(adjacentTile))
                                 {
                                     //move to the open list and calculate cost
-                                    openList.Add(adjacentTile);
+                                    openList.addItem(adjacentTile);
 
                                     Tile tile = grid[(int)adjacentTile.X, (int)adjacentTile.Y];
 
@@ -123,6 +125,7 @@ namespace WalMart.Astar
 
                                 }
                             }
+                           
                         }
 
                     }
@@ -143,10 +146,10 @@ namespace WalMart.Astar
 
             while (startFound == false)
             {
-                List<Vector2> adjacentTiles = GetAdjacentTiles(currentTile);
+                CustomList<Vector2> adjacentTiles = GetAdjacentTiles(currentTile);
 
                 //Check to see what newest current tile
-                foreach (Vector2 adjacentTile in adjacentTiles)
+                foreach (Vector2 adjacentTile in adjacentTiles.Count())
                 {
                     //Check if it is the start tile
                     if(adjacentTile.X == startTile.X && adjacentTile.Y == startTile.Y)
@@ -164,7 +167,7 @@ namespace WalMart.Astar
                             currentTile = adjacentTile;
 
                             //add this adjacent tile to the path list
-                            pathTiles.Add(adjacentTile);
+                            pathTiles.addItem(adjacentTile);
 
                             //Change colors for final path (for testing)
 
@@ -177,14 +180,14 @@ namespace WalMart.Astar
             }
         }
         //get the tile whit lowest value
-        public Vector2 GetTileWhitLowestTotal(List<Vector2> openList)
+        public Vector2 GetTileWhitLowestTotal(CustomList<Vector2> openList)
         {
             //temp variables
             Vector2 tileWithLowestTotal = new Vector2(-1, -1);
             int lowestTotal = int.MaxValue;
 
             //search all the open tiles and get tile with lowest cost
-            foreach (Vector2 openTile in openList)
+            foreach (Vector2 openTile in openList.Count())
             {
                 if(grid[(int)openTile.X,(int)openTile.Y].total <= lowestTotal)
                 {
@@ -195,34 +198,34 @@ namespace WalMart.Astar
             return tileWithLowestTotal;
         }
         //check if it is in the boundry and if its walkable
-        public List<Vector2> GetAdjacentTiles(Vector2 currentTile)
+        public CustomList<Vector2> GetAdjacentTiles(Vector2 currentTile)
         {
-            List<Vector2> adjacentTiles = new List<Vector2>();
+            CustomList<Vector2> adjacentTiles = new CustomList<Vector2>();
             Vector2 adjacentTile;
 
             //Tile above
             adjacentTile = new Vector2(currentTile.X, currentTile.Y + 1);
             if(adjacentTile.Y < Level.gridHeight && grid[(int)adjacentTile.X, (int)adjacentTile.Y].walkable)
             {
-                adjacentTiles.Add(adjacentTile);
+                adjacentTiles.addItem(adjacentTile);
             }
             //Tile underneath
             adjacentTile = new Vector2(currentTile.X, currentTile.Y - 1);
             if (adjacentTile.Y >= 0 && grid[(int)adjacentTile.X, (int)adjacentTile.Y].walkable)
             {
-                adjacentTiles.Add(adjacentTile);
+                adjacentTiles.addItem(adjacentTile);
             }
             //Tile to the right
             adjacentTile = new Vector2(currentTile.X + 1, currentTile.Y);
             if (adjacentTile.X < Level.gridwidth && grid[(int)adjacentTile.X, (int)adjacentTile.Y].walkable)
             {
-                adjacentTiles.Add(adjacentTile);
+                adjacentTiles.addItem(adjacentTile);
             }
             //Tile to the left
             adjacentTile = new Vector2(currentTile.X - 1, currentTile.Y);
             if (adjacentTile.X >= 0 && grid[(int)adjacentTile.X, (int)adjacentTile.Y].walkable)
             {
-                adjacentTiles.Add(adjacentTile);
+                adjacentTiles.addItem(adjacentTile);
             }
 
             //DIAGONAL CHECKING
@@ -244,7 +247,7 @@ namespace WalMart.Astar
         }
         public void Draw(SpriteBatch batch)
         {
-            foreach (Vector2 pathlist in pathTiles)
+            foreach (Vector2 pathlist in pathTiles.Count())
             {
                 for (int i = 0; i < Level.gridwidth; i++)
                 {
@@ -258,7 +261,7 @@ namespace WalMart.Astar
                     }
                 }
             }
-            foreach (Vector2 openlist in openList)
+            foreach (Vector2 openlist in openList.Count())
             {
                 for (int i = 0; i < Level.gridwidth; i++)
                 {
