@@ -23,6 +23,7 @@ namespace WalMart
 
         ShoppingList shoppingList = new ShoppingList();
         TestCustomer customer = new TestCustomer();
+       
 
 
         public GameWorld()
