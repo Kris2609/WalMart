@@ -153,7 +153,7 @@ namespace WalMart.Astar
                     }
                     else if (i == 15 && j == 8)
                     {
-                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
+                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
                         batch.Draw(computer, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i == 15 && j == 9)
@@ -168,12 +168,12 @@ namespace WalMart.Astar
                     }
                     else if (i == 9 && j == 1)
                     {
-                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
+                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
                         batch.Draw(shovel, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i == 10 && j == 1)
                     {
-                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
+                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
                         batch.Draw(measureTape, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i == 11 && j == 1)
@@ -221,7 +221,7 @@ namespace WalMart.Astar
                         grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
                         batch.Draw(TileBlock, new Rectangle(i * 70, j * 70, 70, 70), Color.Blue);
                     }
-                    else if (i == 1 && j == 9) //item Tile
+                    else if (i == 10 && j == 9) //item Tile
                     {
                         grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true); 
                         batch.Draw(TileBlock, new Rectangle(i * 70, j * 70, 70, 70), Color.Yellow);
@@ -238,10 +238,24 @@ namespace WalMart.Astar
             }
             //make a new pathfinder
             Pathfinder path1 = new Pathfinder(grid);
-            path1.SearchPath(new Vector2(23, 4), new Vector2(1, 9));
+            path1.SearchPath(new Vector2(23, 4), new Vector2(10, 11));
             path1.Draw(batch);
 
-           
+            Pathfinder path2 = new Pathfinder(grid);
+            path2.SearchPath(new Vector2(10, 11), new Vector2(9, 1));
+            path2.Draw(batch);
+            Pathfinder path3 = new Pathfinder(grid);
+            path3.SearchPath(new Vector2(9,1),new Vector2(10, 1));
+            path3.Draw(batch);
+            Pathfinder path4 = new Pathfinder(grid);
+            path4.SearchPath(new Vector2(10, 1), new Vector2(15, 8));
+            path4.Draw(batch);
+            Pathfinder path5 = new Pathfinder(grid);
+            path5.SearchPath(new Vector2(15, 8), new Vector2(23, 9));
+            path5.Draw(batch);
+            
+
+
 
 
 
