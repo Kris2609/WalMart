@@ -11,7 +11,9 @@ namespace WalMart.Astar
     {
     
         private T[] items = new T[0];
-        
+        private int number;
+
+
         public void addItem(T item)
         {
             Array.Resize(ref items, items.Count() + 1);
@@ -26,6 +28,16 @@ namespace WalMart.Astar
         public IEnumerable<T> Count()
         {
             return items;
+        }
+        public int CountTotal()
+        {
+            int number = 0;
+            for (int i = 0; i < items.Length; i++)
+            {
+                number += 1;
+            }
+
+            return number;
         }
 
         public IEnumerator<T> GetEnumerator()
