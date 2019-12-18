@@ -15,8 +15,9 @@ namespace WalMart
         public ShoppingList shoplist = new ShoppingList();
         List<string> test = new List<string>();
         public SpriteFont font;
-        float positionX = 1900;
-        float positionY = 700;
+        //float positionX = 1900;
+        //float positionY = 700;
+        Vector2 pos = new Vector2(1900, 700); 
 
         public TestCustomer()
         {
@@ -61,8 +62,8 @@ namespace WalMart
                 for (int i = 0; i < item.Length; i++)
                 {
                    
-                    batch.DrawString(font, item, new Vector2(positionX, positionY), Color.White);
-                    
+                    batch.DrawString(font, item, pos, Color.White);
+                    pos +=  new Vector2(100, 0); 
 
                 }
             }
