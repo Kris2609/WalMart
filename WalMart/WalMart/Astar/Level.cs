@@ -89,9 +89,7 @@ namespace WalMart.Astar
             path1.SearchPath(new Vector2(23, 4), new Vector2(1, 9));
             path1.Draw(batch);
 
-            Pathfinder path2 = new Pathfinder(grid);
-            path2.SearchPath(new Vector2(1, 9), new Vector2(23, 9));
-            path2.Draw(batch);
+           
 
 
 
