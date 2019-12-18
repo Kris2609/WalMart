@@ -223,7 +223,7 @@ namespace WalMart.Astar
                     }
                     else if (i == 1 && j == 9) //item Tile
                     {
-                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
+                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true); 
                         batch.Draw(TileBlock, new Rectangle(i * 70, j * 70, 70, 70), Color.Yellow);
                     }
                     else
