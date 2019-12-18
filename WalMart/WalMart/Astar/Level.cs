@@ -41,32 +41,31 @@ namespace WalMart.Astar
         {
             
         }
-        public static void GetTexture(Texture2D texture)
+        public static void GetTexture(Texture2D texture, Texture2D computer, Texture2D screwDriver, Texture2D shovel, Texture2D watch, Texture2D measureTape, Texture2D perfume, Texture2D toiletPaper, Texture2D toothPaste, Texture2D hammer, Texture2D apple, Texture2D banana, Texture2D burrito, Texture2D pear, Texture2D coffee, Texture2D gold, Texture2D tv, Texture2D scrum, Texture2D nailPolish, Texture2D golf, Texture2D granateLuncher, Texture2D towel)
         {
             Level.TileBlock = texture;
-            Level.apple = ShoppingList.apple;
-            Level.banana = ShoppingList.banana;
-            Level.burrito = ShoppingList.burrito;
-            Level.pear = ShoppingList.pear;
-            Level.coffee = ShoppingList.coffee;
-            Level.gold = ShoppingList.gold;
-            Level.tv = ShoppingList.tv;
-            Level.scrum = ShoppingList.scrum;
-            Level.nailPolish = ShoppingList.nailPolish;
-            Level.perfume = ShoppingList.perfume;
-            Level.computer = ShoppingList.computer;
-            Level.towel = ShoppingList.towel;
-            Level.toiletPaper = ShoppingList.toiletPaper;
-            Level.toothPaste = ShoppingList.toothPaste;
-            Level.measureTape = ShoppingList.measureTape;
-            Level.shovel = ShoppingList.shovel;
-            Level.screwDriver = ShoppingList.screwDriver;
-            Level.watch = ShoppingList.watch;
-            Level.granateLuncher = ShoppingList.granateLuncher;
-            Level.golf = ShoppingList.golf;
-            Level.hammer = ShoppingList.hammer;
-            Level.nailPolish = ShoppingList.nailPolish;
-
+            Level.apple = apple;
+            Level.banana = banana;
+            Level.burrito = burrito;
+            Level.pear = pear;
+            Level.coffee = coffee;
+            Level.gold = gold;
+            Level.tv = tv;
+            Level.scrum = scrum;
+            Level.nailPolish = nailPolish;
+            Level.perfume = perfume;
+            Level.computer = computer;
+            Level.towel = towel;
+            Level.toiletPaper = toiletPaper;
+            Level.toothPaste = toothPaste;
+            Level.measureTape = measureTape;
+            Level.shovel = shovel;
+            Level.screwDriver = screwDriver;
+            Level.watch = watch;
+            Level.granateLuncher = granateLuncher;
+            Level.golf = golf;
+            Level.hammer = hammer;
+            
         }
         public static void Draw(SpriteBatch batch)
         {
