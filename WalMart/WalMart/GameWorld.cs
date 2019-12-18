@@ -18,9 +18,12 @@ namespace WalMart
         private Texture2D playerBlack;
         private Texture2D playerBlue;
         private Texture2D playerGreen;
-     
+        
 
-        ShoppingList shoppingList = new ShoppingList(); 
+        Vector2 sprtPos; 
+
+        ShoppingList shoppingList = new ShoppingList();
+        TestCustomer customer = new TestCustomer();
 
 
         public GameWorld()
@@ -41,6 +44,11 @@ namespace WalMart
         /// </summary>
         protected override void Initialize()
         {
+
+            LoadContent();
+            sprtPos = new Vector2(1900, 700); 
+
+
             // TODO: Add your initialization logic here
 
             base.Initialize();
@@ -60,35 +68,36 @@ namespace WalMart
             playerBlue = Content.Load<Texture2D>("BasketGreen");
             playerGreen = Content.Load<Texture2D>("BasketBlue");
             
-            shoppingList.apple = Content.Load<Texture2D>("Apple");
-            shoppingList.pear = Content.Load<Texture2D>("Pear");
-            shoppingList.banana = Content.Load<Texture2D>("banana");
-            shoppingList.burrito = Content.Load<Texture2D>("Burrito");
-            shoppingList.coffee = Content.Load<Texture2D>("Coffee");
-            shoppingList.hammer = Content.Load<Texture2D>("hammer");
-            shoppingList.screwDriver = Content.Load<Texture2D>("ScrewDriver");
-            shoppingList.shovel = Content.Load<Texture2D>("Shovel");
-            shoppingList.measureTape = Content.Load<Texture2D>("MeasureTape");
-            shoppingList.nailPolish = Content.Load<Texture2D>("NailPolish");
-            shoppingList.perfume = Content.Load<Texture2D>("Perfume");
-            shoppingList.toiletPaper = Content.Load<Texture2D>("ToiletPaper");
-            shoppingList.toothPaste = Content.Load<Texture2D>("ToothPaste");
-            shoppingList.towel = Content.Load<Texture2D>("Towel");
-            shoppingList.gold = Content.Load<Texture2D>("gold");
-            shoppingList.scrum = Content.Load<Texture2D>("Scrum");
-            shoppingList.computer = Content.Load<Texture2D>("Computer");
-            shoppingList.tv = Content.Load<Texture2D>("Tv");
-            shoppingList.watch = Content.Load<Texture2D>("Watch");
-            shoppingList.golf = Content.Load<Texture2D>("Golf");
-            shoppingList.granateLuncher = Content.Load<Texture2D>("GranateLuncher");
-            shoppingList.ListBlack = Content.Load<Texture2D>("ListBlack");
-            shoppingList.ListGreen = Content.Load<Texture2D>("ListGreen");
-            shoppingList.ListBlue = Content.Load<Texture2D>("ListRed"); 
+            customer.shoplist.apple = Content.Load<Texture2D>("Apple");
+            customer.shoplist.pear = Content.Load<Texture2D>("Pear");
+            customer.shoplist.banana = Content.Load<Texture2D>("banana");
+            customer.shoplist.burrito = Content.Load<Texture2D>("Burrito");
+            customer.shoplist.coffee = Content.Load<Texture2D>("Coffee");
+            customer.shoplist.hammer = Content.Load<Texture2D>("hammer");
+            customer.shoplist.screwDriver = Content.Load<Texture2D>("ScrewDriver");
+            customer.shoplist.shovel = Content.Load<Texture2D>("Shovel");
+            customer.shoplist.measureTape = Content.Load<Texture2D>("MeasureTape");
+            customer.shoplist.nailPolish = Content.Load<Texture2D>("NailPolish");
+            customer.shoplist.perfume = Content.Load<Texture2D>("Perfume");
+            customer.shoplist.toiletPaper = Content.Load<Texture2D>("ToiletPaper");
+            customer.shoplist.toothPaste = Content.Load<Texture2D>("ToothPaste");
+            customer.shoplist.towel = Content.Load<Texture2D>("Towel");
+            customer.shoplist.gold = Content.Load<Texture2D>("gold");
+            customer.shoplist.scrum = Content.Load<Texture2D>("Scrum");
+            customer.shoplist.computer = Content.Load<Texture2D>("Computer");
+            customer.shoplist.tv = Content.Load<Texture2D>("Tv");
+            customer.shoplist.watch = Content.Load<Texture2D>("Watch");
+            customer.shoplist.golf = Content.Load<Texture2D>("Golf");
+            customer.shoplist.granateLuncher = Content.Load<Texture2D>("GranateLuncher");
+            customer.shoplist.ListBlack = Content.Load<Texture2D>("ListBlack");
+            customer.shoplist.ListGreen = Content.Load<Texture2D>("ListGreen");
+            customer.shoplist.ListBlue = Content.Load<Texture2D>("ListRed"); 
             Texture2D tileBlock = Content.Load<Texture2D>("TileBlock");
             font = Content.Load<SpriteFont>("Font");
+            customer.font = Content.Load<SpriteFont>("Font");
 
             Pathfinder.GetTexture(tileBlock);
-            Level.GetTexture(tileBlock);
+            Level.GetTexture(tileBlock,customer.shoplist.computer, customer.shoplist.screwDriver, customer.shoplist.shovel, customer.shoplist.watch, customer.shoplist.measureTape, customer.shoplist.perfume, customer.shoplist.toiletPaper, customer.shoplist.toothPaste, customer.shoplist.hammer, customer.shoplist.apple, customer.shoplist.banana, customer.shoplist.burrito, customer.shoplist.pear, customer.shoplist.coffee, customer.shoplist.gold, customer.shoplist.tv, customer.shoplist.scrum, customer.shoplist.nailPolish, customer.shoplist.golf, customer.shoplist.granateLuncher, customer.shoplist.towel);
 
             spriteBatch.End();
 
@@ -126,75 +135,51 @@ namespace WalMart
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-           
+
+
             spriteBatch.Begin();
             Level.Draw(spriteBatch);
-            spriteBatch.Draw(playerBlack,new Rectangle(1700,50, 70, 70),Color.White);
-            spriteBatch.Draw(playerBlue, new Rectangle(1700,550, 70, 70), Color.White);
-            spriteBatch.Draw(playerGreen, new Rectangle(1700,300, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.apple, new Rectangle(300, 300, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.burrito, new Rectangle(400,300, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.coffee, new Rectangle(500, 300, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.banana, new Rectangle(600, 300, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.pear, new Rectangle(700, 300, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.hammer, new Rectangle(300, 500, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.measureTape, new Rectangle(400,500, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.shovel, new Rectangle(500, 500, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.screwDriver, new Rectangle(600,500, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.gold, new Rectangle(300, 700, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.scrum, new Rectangle(400, 700, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.nailPolish, new Rectangle(300, 600, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.toiletPaper, new Rectangle(400,600, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.perfume ,new Rectangle(500,600, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.toothPaste ,new Rectangle(600,600, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.towel ,new Rectangle(700,600, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.golf, new Rectangle(300, 400, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.granateLuncher, new Rectangle(400, 400, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.watch, new Rectangle(500, 400, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.computer, new Rectangle(600, 400, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.tv, new Rectangle(700, 400, 70, 70), Color.White);
-            spriteBatch.Draw(shoppingList.ListBlack, new Rectangle(1700, 100, 200, 200), Color.Black);
-            spriteBatch.Draw(shoppingList.ListBlue, new Rectangle(1700, 350, 200, 200), Color.Blue);
-            spriteBatch.Draw(shoppingList.ListGreen, new Rectangle(1700, 600, 200, 200), Color.Green);
-            SortItems(); 
-            
+            customer.Draw(spriteBatch);
+            spriteBatch.Draw(playerBlack, new Rectangle(1700, 50, 70, 70), Color.White);
+            spriteBatch.Draw(playerBlue, new Rectangle(1700, 550, 70, 70), Color.White);
+            spriteBatch.Draw(playerGreen, new Rectangle(1700, 300, 70, 70), Color.White);
+            //spriteBatch.Draw(customer.shoplist.apple, new Rectangle(300, 300, 70, 70), Color.White);
+            //spriteBatch.Draw(customer.shoplist.burrito, new Rectangle(400, 300, 70, 70), Color.White);
+            //spriteBatch.Draw(customer.shoplist.coffee, new Rectangle(500, 300, 70, 70), Color.White);
+            //spriteBatch.Draw(customer.shoplist.banana, new Rectangle(600, 300, 70, 70), Color.White);
+            //spriteBatch.Draw(customer.shoplist.pear, new Rectangle(700, 300, 70, 70), Color.White);
+            //spriteBatch.Draw(customer.shoplist.hammer, new Rectangle(300, 500, 70, 70), Color.White);
+            //spriteBatch.Draw(customer.shoplist.measureTape, new Rectangle(400, 500, 70, 70), Color.White);
+            //spriteBatch.Draw(customer.shoplist.shovel, new Rectangle(500, 500, 70, 70), Color.White);
+            //spriteBatch.Draw(customer.shoplist.screwDriver, new Rectangle(600, 500, 70, 70), Color.White);
+            //spriteBatch.Draw(customer.shoplist.gold, new Rectangle(300, 700, 70, 70), Color.White);
+            //spriteBatch.Draw(customer.shoplist.scrum, new Rectangle(400, 700, 70, 70), Color.White);
+            //spriteBatch.Draw(customer.shoplist.nailPolish, new Rectangle(300, 600, 70, 70), Color.White);
+            //spriteBatch.Draw(customer.shoplist.toiletPaper, new Rectangle(400, 600, 70, 70), Color.White);
+            //spriteBatch.Draw(customer.shoplist.perfume, new Rectangle(500, 600, 70, 70), Color.White);
+            //spriteBatch.Draw(customer.shoplist.toothPaste, new Rectangle(600, 600, 70, 70), Color.White);
+            //spriteBatch.Draw(customer.shoplist.towel, new Rectangle(700, 600, 70, 70), Color.White);
+            //spriteBatch.Draw(customer.shoplist.golf, new Rectangle(300, 400, 70, 70), Color.White);
+            //spriteBatch.Draw(customer.shoplist.granateLuncher, new Rectangle(400, 400, 70, 70), Color.White);
+            //spriteBatch.Draw(customer.shoplist.watch, new Rectangle(500, 400, 70, 70), Color.White);
+            //spriteBatch.Draw(customer.shoplist.computer, new Rectangle(600, 400, 70, 70), Color.White);
+            //spriteBatch.Draw(customer.shoplist.tv, new Rectangle(700, 400, 70, 70), Color.White);
+            spriteBatch.Draw(customer.shoplist.ListBlack, new Rectangle(1700, 100, 200, 200), Color.Black);
+            spriteBatch.Draw(customer.shoplist.ListBlue, new Rectangle(1700, 350, 200, 200), Color.Blue);
+            spriteBatch.Draw(customer.shoplist.ListGreen, new Rectangle(1700, 600, 200, 200), Color.Green);
+
+
+
+
+
+
+            // spriteBatch.Draw(SortItems(), new Vector2(2000, 700), Color.White);
+
             spriteBatch.End();
-            
+
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
-        }
-        public void SortItems()
-        {
-            Texture2D[] items = {shoppingList.screwDriver, shoppingList.apple, shoppingList.banana, shoppingList.burrito, shoppingList.coffee,
-                                shoppingList.computer, shoppingList.gold, shoppingList.golf, shoppingList.granateLuncher, shoppingList.hammer,
-                                shoppingList.measureTape, shoppingList.shovel, shoppingList.nailPolish, shoppingList.pear, shoppingList.perfume,
-                                shoppingList.screwDriver, shoppingList.scrum, shoppingList.toiletPaper, shoppingList.toothPaste, shoppingList.towel,
-                                shoppingList.tv, shoppingList.watch}; 
-            string[] list = new string[5];
-            Random rnd = new Random();
-
-
-            foreach (Texture2D item in items)
-            {
-                for (int i = 0; i <= 5; i++)
-                {
-
-
-                    list[0] = rnd.Next(0, items.Length).ToString();
-                    list[1] = rnd.Next(0, items.Length).ToString();
-                    list[2] = rnd.Next(0, items.Length).ToString();
-                    list[3] = rnd.Next(0, items.Length).ToString();
-                    list[4] = rnd.Next(0, items.Length).ToString();
-
-
-                    spriteBatch.DrawString(font, list[0], new Vector2(1900, 700), Color.Black);
-
-                }
-                
-            }
-
-
         }
     }
 }
