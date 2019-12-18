@@ -19,7 +19,6 @@ namespace WalMart
         private Texture2D playerBlue;
         private Texture2D playerGreen;
         
-
         Vector2 sprtPos; 
 
         ShoppingList shoppingList = new ShoppingList();
@@ -136,42 +135,15 @@ namespace WalMart
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-
             spriteBatch.Begin();
             Level.Draw(spriteBatch);
             customer.Draw(spriteBatch);
             spriteBatch.Draw(playerBlack, new Rectangle(1700, 50, 70, 70), Color.White);
             spriteBatch.Draw(playerBlue, new Rectangle(1700, 550, 70, 70), Color.White);
             spriteBatch.Draw(playerGreen, new Rectangle(1700, 300, 70, 70), Color.White);
-            //spriteBatch.Draw(customer.shoplist.apple, new Rectangle(300, 300, 70, 70), Color.White);
-            //spriteBatch.Draw(customer.shoplist.burrito, new Rectangle(400, 300, 70, 70), Color.White);
-            //spriteBatch.Draw(customer.shoplist.coffee, new Rectangle(500, 300, 70, 70), Color.White);
-            //spriteBatch.Draw(customer.shoplist.banana, new Rectangle(600, 300, 70, 70), Color.White);
-            //spriteBatch.Draw(customer.shoplist.pear, new Rectangle(700, 300, 70, 70), Color.White);
-            //spriteBatch.Draw(customer.shoplist.hammer, new Rectangle(300, 500, 70, 70), Color.White);
-            //spriteBatch.Draw(customer.shoplist.measureTape, new Rectangle(400, 500, 70, 70), Color.White);
-            //spriteBatch.Draw(customer.shoplist.shovel, new Rectangle(500, 500, 70, 70), Color.White);
-            //spriteBatch.Draw(customer.shoplist.screwDriver, new Rectangle(600, 500, 70, 70), Color.White);
-            //spriteBatch.Draw(customer.shoplist.gold, new Rectangle(300, 700, 70, 70), Color.White);
-            //spriteBatch.Draw(customer.shoplist.scrum, new Rectangle(400, 700, 70, 70), Color.White);
-            //spriteBatch.Draw(customer.shoplist.nailPolish, new Rectangle(300, 600, 70, 70), Color.White);
-            //spriteBatch.Draw(customer.shoplist.toiletPaper, new Rectangle(400, 600, 70, 70), Color.White);
-            //spriteBatch.Draw(customer.shoplist.perfume, new Rectangle(500, 600, 70, 70), Color.White);
-            //spriteBatch.Draw(customer.shoplist.toothPaste, new Rectangle(600, 600, 70, 70), Color.White);
-            //spriteBatch.Draw(customer.shoplist.towel, new Rectangle(700, 600, 70, 70), Color.White);
-            //spriteBatch.Draw(customer.shoplist.golf, new Rectangle(300, 400, 70, 70), Color.White);
-            //spriteBatch.Draw(customer.shoplist.granateLuncher, new Rectangle(400, 400, 70, 70), Color.White);
-            //spriteBatch.Draw(customer.shoplist.watch, new Rectangle(500, 400, 70, 70), Color.White);
-            //spriteBatch.Draw(customer.shoplist.computer, new Rectangle(600, 400, 70, 70), Color.White);
-            //spriteBatch.Draw(customer.shoplist.tv, new Rectangle(700, 400, 70, 70), Color.White);
             spriteBatch.Draw(customer.shoplist.ListBlack, new Rectangle(1700, 100, 200, 200), Color.Black);
             spriteBatch.Draw(customer.shoplist.ListBlue, new Rectangle(1700, 350, 200, 200), Color.Blue);
             spriteBatch.Draw(customer.shoplist.ListGreen, new Rectangle(1700, 600, 200, 200), Color.Green);
-
-
-
-
-
 
             // spriteBatch.Draw(SortItems(), new Vector2(2000, 700), Color.White);
 

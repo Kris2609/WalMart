@@ -44,8 +44,6 @@ namespace WalMart
                     temp2 = list.CountTotal();
                 }
 
-                
-
                 return list;
             }
             else
@@ -60,10 +58,7 @@ namespace WalMart
             {
                 for (int i = 0; i < item.Length; i++)
                 {
-                   
                     batch.DrawString(font, item, new Vector2(positionX, positionY), Color.White);
-                    
-
                 }
             }
         }
