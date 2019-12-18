@@ -61,26 +61,26 @@ namespace WalMart
             playerGreen = Content.Load<Texture2D>("BasketBlue");
             
             ShoppingList.apple = Content.Load<Texture2D>("Apple");
-            shoppingList.pear = Content.Load<Texture2D>("Pear");
-            shoppingList.banana = Content.Load<Texture2D>("banana");
-            shoppingList.burrito = Content.Load<Texture2D>("Burrito");
-            shoppingList.coffee = Content.Load<Texture2D>("Coffee");
+            ShoppingList.pear = Content.Load<Texture2D>("Pear");
+            ShoppingList.banana = Content.Load<Texture2D>("banana");
+            ShoppingList.burrito = Content.Load<Texture2D>("Burrito");
+            ShoppingList.coffee = Content.Load<Texture2D>("Coffee");
             ShoppingList.hammer = Content.Load<Texture2D>("hammer");
-            shoppingList.screwDriver = Content.Load<Texture2D>("ScrewDriver");
-            shoppingList.shovel = Content.Load<Texture2D>("Shovel");
-            shoppingList.measureTape = Content.Load<Texture2D>("MeasureTape");
+            ShoppingList.screwDriver = Content.Load<Texture2D>("ScrewDriver");
+            ShoppingList.shovel = Content.Load<Texture2D>("Shovel");
+            ShoppingList.measureTape = Content.Load<Texture2D>("MeasureTape");
             ShoppingList.nailPolish = Content.Load<Texture2D>("NailPolish");
-            shoppingList.perfume = Content.Load<Texture2D>("Perfume");
-            shoppingList.toiletPaper = Content.Load<Texture2D>("ToiletPaper");
-            shoppingList.toothPaste = Content.Load<Texture2D>("ToothPaste");
-            shoppingList.towel = Content.Load<Texture2D>("Towel");
+            ShoppingList.perfume = Content.Load<Texture2D>("Perfume");
+            ShoppingList.toiletPaper = Content.Load<Texture2D>("ToiletPaper");
+            ShoppingList.toothPaste = Content.Load<Texture2D>("ToothPaste");
+            ShoppingList.towel = Content.Load<Texture2D>("Towel");
             ShoppingList.gold = Content.Load<Texture2D>("gold");
-            shoppingList.scrum = Content.Load<Texture2D>("Scrum");
-            shoppingList.computer = Content.Load<Texture2D>("Computer");
+            ShoppingList.scrum = Content.Load<Texture2D>("Scrum");
+            ShoppingList.computer = Content.Load<Texture2D>("Computer");
             ShoppingList.tv = Content.Load<Texture2D>("Tv");
-            shoppingList.watch = Content.Load<Texture2D>("Watch");
-            shoppingList.golf = Content.Load<Texture2D>("Golf");
-            shoppingList.granateLuncher = Content.Load<Texture2D>("GranateLuncher");
+            ShoppingList.watch = Content.Load<Texture2D>("Watch");
+            ShoppingList.golf = Content.Load<Texture2D>("Golf");
+            ShoppingList.granateLuncher = Content.Load<Texture2D>("GranateLuncher");
             shoppingList.ListBlack = Content.Load<Texture2D>("ListBlack");
             shoppingList.ListGreen = Content.Load<Texture2D>("ListGreen");
             shoppingList.ListBlue = Content.Load<Texture2D>("ListRed"); 
@@ -166,11 +166,11 @@ namespace WalMart
         }
         public void SortItems()
         {
-            Texture2D[] items = {shoppingList.screwDriver, ShoppingList.apple, shoppingList.banana, shoppingList.burrito, shoppingList.coffee,
-                                shoppingList.computer, ShoppingList.gold, shoppingList.golf, shoppingList.granateLuncher, ShoppingList.hammer,
-                                shoppingList.measureTape, shoppingList.shovel, ShoppingList.nailPolish, shoppingList.pear, shoppingList.perfume,
-                                shoppingList.screwDriver, shoppingList.scrum, shoppingList.toiletPaper, shoppingList.toothPaste, shoppingList.towel,
-                                ShoppingList.tv, shoppingList.watch}; 
+            Texture2D[] items = {ShoppingList.screwDriver, ShoppingList.apple, ShoppingList.banana, ShoppingList.burrito, ShoppingList.coffee,
+                                ShoppingList.computer, ShoppingList.gold, ShoppingList.golf, ShoppingList.granateLuncher, ShoppingList.hammer,
+                                ShoppingList.measureTape, ShoppingList.shovel, ShoppingList.nailPolish, ShoppingList.pear, ShoppingList.perfume,
+                                ShoppingList.screwDriver, ShoppingList.scrum, ShoppingList.toiletPaper, ShoppingList.toothPaste, ShoppingList.towel,
+                                ShoppingList.tv, ShoppingList.watch}; 
             string[] list = new string[5];
             Random rnd = new Random();
 

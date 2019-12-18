@@ -11,26 +11,26 @@ namespace WalMart
     public class ShoppingList
     {
         public static Texture2D apple; 
-        public Texture2D banana;
-        public Texture2D pear;
-        public Texture2D burrito;
-        public Texture2D coffee;
+        public static Texture2D banana;
+        public static Texture2D pear;
+        public static Texture2D burrito;
+        public static Texture2D coffee;
         public static Texture2D hammer;
-        public Texture2D measureTape;
-        public Texture2D shovel;
-        public Texture2D screwDriver;
+        public static Texture2D measureTape;
+        public static Texture2D shovel;
+        public static Texture2D screwDriver;
         public static Texture2D gold;
-        public Texture2D scrum;
+        public static Texture2D scrum;
         public static Texture2D nailPolish;
-        public Texture2D perfume;
-        public Texture2D toiletPaper;
-        public Texture2D toothPaste;
-        public Texture2D towel;
+        public static Texture2D perfume;
+        public static Texture2D toiletPaper;
+        public static Texture2D toothPaste;
+        public static Texture2D towel;
         public static Texture2D tv;
-        public Texture2D computer;
-        public Texture2D granateLuncher;
-        public Texture2D watch;
-        public Texture2D golf;
+        public static Texture2D computer;
+        public static Texture2D granateLuncher;
+        public static Texture2D watch;
+        public static Texture2D golf;
 
         public Texture2D ListBlack;
         public Texture2D ListGreen;
