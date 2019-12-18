@@ -76,6 +76,7 @@ namespace WalMart.Astar
             {
                 for (int j = 0; j < gridHeight; j++)
                 {
+                    #region Items
                     if (i == 5 && j == 5) //walkeable false
                     {
                         //make a new tile
@@ -211,7 +212,10 @@ namespace WalMart.Astar
                         grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
                         batch.Draw(TileBlock, new Rectangle(i * 70, j * 70, 70, 70), Color.Black);
                     }
-                    else if(i == 23 && j == 4) //Start Tile
+                    #endregion
+                    #region Start, End and Item Tile
+
+                    else if (i == 23 && j == 4) //Start Tile
                     {
                         grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
                         batch.Draw(TileBlock, new Rectangle(i * 70, j * 70, 70, 70), Color.Green);
@@ -226,6 +230,7 @@ namespace WalMart.Astar
                         grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true); 
                         batch.Draw(TileBlock, new Rectangle(i * 70, j * 70, 70, 70), Color.Yellow);
                     }
+                    #endregion
                     else
                     {
                         //make a new tile
