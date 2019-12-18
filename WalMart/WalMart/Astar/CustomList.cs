@@ -9,7 +9,6 @@ namespace WalMart.Astar
 {
     public class CustomList <T> : IEnumerable<T>
     {
-    
         private T[] items = new T[0];
         
         public void addItem(T item)

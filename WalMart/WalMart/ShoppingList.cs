@@ -36,10 +36,6 @@ namespace WalMart
         public Texture2D ListGreen;
         public Texture2D ListBlue; 
 
-
-
-            
-        
     }
 }
 

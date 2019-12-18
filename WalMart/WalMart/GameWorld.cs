@@ -23,8 +23,6 @@ namespace WalMart
         Vector2 sprtPos; 
 
         Texture2D[] items = new Texture2D[21]; 
-     
-
         ShoppingList shoppingList = new ShoppingList(); 
 
 
@@ -46,7 +44,6 @@ namespace WalMart
         /// </summary>
         protected override void Initialize()
         {
-
             LoadContent();
             sprtPos = new Vector2(1900, 700); 
 
@@ -157,8 +154,6 @@ namespace WalMart
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-
             spriteBatch.Begin();
             Level.Draw(spriteBatch);
             spriteBatch.Draw(playerBlack, new Rectangle(1700, 50, 70, 70), Color.White);
@@ -189,13 +184,7 @@ namespace WalMart
             spriteBatch.Draw(shoppingList.ListBlue, new Rectangle(1700, 350, 200, 200), Color.Blue);
             spriteBatch.Draw(shoppingList.ListGreen, new Rectangle(1700, 600, 200, 200), Color.Green);
 
-
-
-
-
-
             // spriteBatch.Draw(SortItems(), new Vector2(2000, 700), Color.White);
-
             spriteBatch.End();
 
             // TODO: Add your drawing code here

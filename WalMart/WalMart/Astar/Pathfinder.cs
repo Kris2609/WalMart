@@ -28,8 +28,6 @@ namespace WalMart.Astar
             
         }
 
-
-
         #region A* pseudo  "from Youtube user Jorn Theunissen"
         ////////////////////////////////////////////////////////////////////////
         ///add the starting node to open list
@@ -133,7 +131,6 @@ namespace WalMart.Astar
             }
             //Make start and goal tile red (for testing)
 
-
             //show the path
             ShowPath();
         }
@@ -143,7 +140,6 @@ namespace WalMart.Astar
 
             Vector2 currentTile = goal;
            
-
             while (startFound == false)
             {
                 CustomList<Vector2> adjacentTiles = GetAdjacentTiles(currentTile);
@@ -170,9 +166,6 @@ namespace WalMart.Astar
                             pathTiles.addItem(adjacentTile);
 
                             //Change colors for final path (for testing)
-
-
-                            
                         }
                     }
                 }
@@ -229,7 +222,6 @@ namespace WalMart.Astar
             }
 
             //DIAGONAL CHECKING
-
 
             return adjacentTiles;
         }

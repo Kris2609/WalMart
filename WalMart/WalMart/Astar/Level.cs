@@ -65,8 +65,7 @@ namespace WalMart.Astar
             Level.granateLuncher = ShoppingList.granateLuncher;
             Level.golf = ShoppingList.golf;
             Level.hammer = ShoppingList.hammer;
-        
-        Level.nailPolish = ShoppingList.nailPolish;
+            Level.nailPolish = ShoppingList.nailPolish;
 
         }
         public static void Draw(SpriteBatch batch)
@@ -259,14 +258,6 @@ namespace WalMart.Astar
             path5.SearchPath(new Vector2(15, 8), new Vector2(23, 9));
             path5.Draw(batch);
             
-
-
-
-
-
-
         }
-
-        
     }
 }
