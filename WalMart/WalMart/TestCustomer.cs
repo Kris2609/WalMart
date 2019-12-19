@@ -17,22 +17,20 @@ namespace WalMart
         public SpriteFont font;
         //float positionX = 1900;
         //float positionY = 700;
-        Vector2 pos = new Vector2(1900, 700); 
+       
 
         public TestCustomer()
         {
             getItems();
+           
         }
         public CustomList<string> getItems()
         {
             if(list.Count() != null)
             {
-                Random rand = new Random();
-
-                int temp = rand.Next(1, 7);
-                string tempstring = Convert.ToString(temp);
-                int temp2 = list.CountTotal();
-                while (temp2 < temp)
+                Random rand = new Random();    
+                int temp = list.CountTotal();
+                while (temp < 7)
                 {
                     int tempnr = rand.Next(1, 21);
                     // get tempitem = ShoppingList array item
@@ -42,7 +40,7 @@ namespace WalMart
                     {
                         list.addItem(tempItem);
                     }
-                    temp2 = list.CountTotal();
+                    temp = list.CountTotal();
                 }
 
                 
@@ -54,18 +52,20 @@ namespace WalMart
                 return list;
             }
         }
+      
+
 
         public void Draw(SpriteBatch batch)
         {
+            Vector2 pos = new Vector2(1750, 650);
             foreach (var item in list.Count())
             {
-                for (int i = 0; i < item.Length; i++)
-                {
-                   
-                    batch.DrawString(font, item, pos, Color.White);
-                    pos +=  new Vector2(100, 0); 
 
-                }
+
+                batch.DrawString(font, item, pos, Color.Black);
+                pos += new Vector2(0, 20);
+
+
             }
         }
     }
