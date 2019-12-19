@@ -35,7 +35,8 @@ namespace WalMart
             graphics.PreferredBackBufferWidth = 2400;
             graphics.PreferredBackBufferHeight = 1200;
 
-           
+            Thread cus1 = new Thread(customer.findPath);
+            Thread cus2 = new Thread(customer.findPath);
 
         }
 

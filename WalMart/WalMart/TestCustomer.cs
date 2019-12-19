@@ -13,6 +13,7 @@ namespace WalMart
     class TestCustomer
     {
         CustomList<string> list = new CustomList<string>();
+        CustomList<Vector2> pos = new CustomList<Vector2>();
         public ShoppingList shoplist = new ShoppingList();
         
         public SpriteFont font;
@@ -24,10 +25,6 @@ namespace WalMart
             this.positionX = positionX;
             this.positionY = positionY;
             getItems();
-
-            Thread customer1 = new Thread(findPath);
-            Thread customer2 = new Thread(findPath);
-            Thread customer3 = new Thread(findPath);
         }
         public CustomList<string> getItems()
         {
@@ -44,9 +41,12 @@ namespace WalMart
                     // get tempitem = ShoppingList array item
 
                     string tempItem = shoplist.items[tempnr];
+                    Vector2 tempLocation = shoplist.itemPosition[tempnr];
                     if (!list.Contains(tempItem))
                     {
                         list.addItem(tempItem);
+                        pos.addItem(tempLocation);
+
                     }
                     temp2 = list.CountTotal();
                 }
@@ -62,13 +62,35 @@ namespace WalMart
 
         public void findPath()
         {
-            foreach (var item in list)
-            {
-               
-                Pathfinder path1 = new Pathfinder(Level.grid);
-                path1.SearchPath(new Vector2(23, 4), new Vector2(10, 11));
+            
+            //foreach (var item in list)
+            //{
+            //    for (int i = 0; i < item.Length; i++)
+            //    {
+            //        for (int j = 0; j < item.Length; j++)
+            //        {
+            //            if (item[i] == pos[i,j])
+            //            {
 
-            }
+            //            }
+            //        }
+                   
+            //    }
+            //    for (int i = 0; i < Level.gridwidth; i++)
+            //    {
+            //        for (int j = 0; j < Level.gridHeight; j++)
+            //        {
+
+            //            if ()
+            //            {
+            //                Pathfinder path1 = new Pathfinder(Level.grid);
+            //                path1.SearchPath(new Vector2(23, 4), new Vector2(10, 11));
+            //            }
+            //        }
+            //    }
+               
+
+            //}
         }
 
         public void Draw(SpriteBatch batch)
