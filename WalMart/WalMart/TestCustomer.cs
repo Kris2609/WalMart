@@ -19,13 +19,11 @@ namespace WalMart
 
 
         public SpriteFont font;
-        float positionX = 1900;
-        float positionY = 700;
-
+       
         public TestCustomer(float positionX, float positionY)
         {
-            this.positionX = positionX;
-            this.positionY = positionY;
+            //this.positionX = positionX;
+            //this.positionY = positionY;
             getItems();
         }
         public CustomList<string> getItems()
@@ -34,11 +32,9 @@ namespace WalMart
             {
                 Random rand = new Random();
 
-                int temp = rand.Next(1, 7);
-                string tempstring = Convert.ToString(temp);
              //   posArray = new Vector2[temp];
                 int temp2 = list.CountTotal();
-                while (temp2 < temp)
+                while (temp2 < 7)
                 {
                   
                     int tempnr = rand.Next(1, 21);
@@ -92,12 +88,14 @@ namespace WalMart
         {
             foreach (var item in list.Count())
             {
-               
+                float positionX = 1900;
+                float positionY = 700;
+
                 for (int i = 0; i < item.Length; i++)
                 {                 
                     batch.DrawString(font, item, new Vector2(positionX, positionY), Color.White);
-                    
 
+                    positionY += 20; 
                 }
             }
         }
