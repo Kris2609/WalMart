@@ -6,10 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace WalMart.Astar
 {
-   public static class Level
+    
+    public static class Level
     {
+        
         public static int gridwidth = 24; 
         public static int gridHeight = 14; 
         public static Texture2D TileBlock;
