@@ -65,9 +65,9 @@ namespace WalMart
             
             spriteBatch.Begin();
             playerBlack = Content.Load<Texture2D>("BasketBlack");
-            playerBlue = Content.Load<Texture2D>("BasketGreen");
-            playerGreen = Content.Load<Texture2D>("BasketBlue");
-            
+            playerBlue = Content.Load<Texture2D>("BasketBlue");
+            playerGreen = Content.Load<Texture2D>("BasketGreen");
+
             customer.shoplist.apple = Content.Load<Texture2D>("Apple");
             customer.shoplist.pear = Content.Load<Texture2D>("Pear");
             customer.shoplist.banana = Content.Load<Texture2D>("banana");
@@ -91,13 +91,17 @@ namespace WalMart
             customer.shoplist.granateLuncher = Content.Load<Texture2D>("GranateLuncher");
             customer.shoplist.ListBlack = Content.Load<Texture2D>("ListBlack");
             customer.shoplist.ListGreen = Content.Load<Texture2D>("ListGreen");
-            customer.shoplist.ListBlue = Content.Load<Texture2D>("ListRed"); 
+            customer.shoplist.ListBlue = Content.Load<Texture2D>("ListBlue"); 
             Texture2D tileBlock = Content.Load<Texture2D>("TileBlock");
             font = Content.Load<SpriteFont>("Font");
             customer.font = Content.Load<SpriteFont>("Font");
 
             Pathfinder.GetTexture(tileBlock);
-            Level.GetTexture(tileBlock,customer.shoplist.computer, customer.shoplist.screwDriver, customer.shoplist.shovel, customer.shoplist.watch, customer.shoplist.measureTape, customer.shoplist.perfume, customer.shoplist.toiletPaper, customer.shoplist.toothPaste, customer.shoplist.hammer, customer.shoplist.apple, customer.shoplist.banana, customer.shoplist.burrito, customer.shoplist.pear, customer.shoplist.coffee, customer.shoplist.gold, customer.shoplist.tv, customer.shoplist.scrum, customer.shoplist.nailPolish, customer.shoplist.golf, customer.shoplist.granateLuncher, customer.shoplist.towel);
+            Level.GetTexture(tileBlock, customer.shoplist.computer, customer.shoplist.screwDriver, customer.shoplist.shovel, customer.shoplist.watch, 
+                customer.shoplist.measureTape, customer.shoplist.perfume, customer.shoplist.toiletPaper, customer.shoplist.toothPaste, customer.shoplist.hammer, 
+                customer.shoplist.apple, customer.shoplist.banana, customer.shoplist.burrito, customer.shoplist.pear, customer.shoplist.coffee, customer.shoplist.gold, 
+                customer.shoplist.tv, customer.shoplist.scrum, customer.shoplist.nailPolish, customer.shoplist.golf, customer.shoplist.granateLuncher, customer.shoplist.towel);
+
 
             spriteBatch.End();
 
@@ -140,8 +144,8 @@ namespace WalMart
             Level.Draw(spriteBatch);
             customer.Draw(spriteBatch);
             spriteBatch.Draw(playerBlack, new Rectangle(1700, 50, 70, 70), Color.White);
-            spriteBatch.Draw(playerBlue, new Rectangle(1700, 550, 70, 70), Color.White);
-            spriteBatch.Draw(playerGreen, new Rectangle(1700, 300, 70, 70), Color.White);
+            spriteBatch.Draw(playerBlue, new Rectangle(1700, 300, 70, 70), Color.White);
+            spriteBatch.Draw(playerGreen, new Rectangle(1700, 550, 70, 70), Color.White);
             spriteBatch.Draw(customer.shoplist.ListBlack, new Rectangle(1700, 100, 200, 200), Color.Black);
             spriteBatch.Draw(customer.shoplist.ListBlue, new Rectangle(1700, 350, 200, 200), Color.Blue);
             spriteBatch.Draw(customer.shoplist.ListGreen, new Rectangle(1700, 600, 200, 200), Color.Green);
