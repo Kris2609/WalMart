@@ -62,19 +62,19 @@ namespace WalMart
 
         public void findPath()
         {
-            
+
             //foreach (var item in list)
             //{
             //    for (int i = 0; i < item.Length; i++)
             //    {
             //        for (int j = 0; j < item.Length; j++)
             //        {
-            //            if (item[i] == pos[i,j])
+            //            if (item[i] == pos[i, j])
             //            {
 
             //            }
             //        }
-                   
+
             //    }
             //    for (int i = 0; i < Level.gridwidth; i++)
             //    {
@@ -88,7 +88,7 @@ namespace WalMart
             //            }
             //        }
             //    }
-               
+
 
             //}
         }
