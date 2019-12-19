@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using WalMart.Astar;
+using System.Threading; 
 
 namespace WalMart
 {
@@ -46,6 +47,7 @@ namespace WalMart
         {
 
             LoadContent();
+           
             sprtPos = new Vector2(1900, 700); 
 
 

@@ -26,9 +26,9 @@ namespace WalMart
         }
         public CustomList<string> getItems()
         {
-            if(list.Count() != null)
+            if (list.Count() != null)
             {
-                Random rand = new Random();    
+                Random rand = new Random();
                 int temp = list.CountTotal();
                 while (temp < 7)
                 {
@@ -43,7 +43,7 @@ namespace WalMart
                     temp = list.CountTotal();
                 }
 
-                
+
 
                 return list;
             }
@@ -52,6 +52,7 @@ namespace WalMart
                 return list;
             }
         }
+        
       
 
 
