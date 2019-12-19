@@ -28,7 +28,7 @@ namespace WalMart.Astar
             
         }
 
-        #region A* pseudo  "from Youtube user Jorn Theunissen"
+        #region A* pseudo  "from Youtube user Jorn Theunissen" Brugt som inspration
         ////////////////////////////////////////////////////////////////////////
         ///add the starting node to open list
         ///while the opeb list is not empty

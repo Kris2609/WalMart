@@ -62,33 +62,6 @@ namespace WalMart
             items[19] = towel + "towel";
             items[20] = tv + "tv";
         }
-        //public void GetTexture(Texture2D sdTexture, Texture2D textureap, Texture2D textureba, Texture2D texturebu, Texture2D textureco,
-        //    Texture2D texturecom, Texture2D texturegold, Texture2D texturegolf, Texture2D texturegra, Texture2D textureham, Texture2D texturemea,
-        //    Texture2D texturesho, Texture2D texturenail, Texture2D texturepear, Texture2D textureperf, Texture2D texturewat, Texture2D texturescr,
-        //    Texture2D texturetpap, Texture2D texturetpt, Texture2D texturetow, Texture2D texturetv)
-        //{
-        //    screwDriver = sdTexture;
-        //    apple = textureap;
-        //    banana = textureba;
-        //    burrito = texturebu;
-        //    coffee = textureco;
-        //    computer = texturecom;
-        //    gold = texturegold;
-        //    golf = texturegolf;
-        //    granateLuncher = texturegra;
-        //    hammer = textureham;
-        //    measureTape = texturemea;
-        //    shovel = texturesho;
-        //    nailPolish = texturenail;
-        //    pear = texturepear;
-        //    perfume = textureperf;
-        //    watch = texturewat;
-        //    scrum = texturescr;
-        //    toiletPaper = texturetpt;
-
-        //}
-
-
     }
 }
 
