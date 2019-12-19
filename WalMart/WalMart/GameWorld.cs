@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
+using System.Threading;
 using WalMart.Astar;
 
 namespace WalMart
@@ -22,7 +23,7 @@ namespace WalMart
         Vector2 sprtPos; 
 
         ShoppingList shoppingList = new ShoppingList();
-        TestCustomer customer = new TestCustomer();
+        TestCustomer customer = new TestCustomer(1900,700);
        
 
 
@@ -33,6 +34,8 @@ namespace WalMart
             IsMouseVisible = true;
             graphics.PreferredBackBufferWidth = 2400;
             graphics.PreferredBackBufferHeight = 1200;
+
+           
 
         }
 
