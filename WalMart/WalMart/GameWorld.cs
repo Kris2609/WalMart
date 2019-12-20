@@ -24,7 +24,7 @@ namespace WalMart
         Vector2 sprtPos; 
 
         ShoppingList shoppingList = new ShoppingList();
-        TestCustomer customer = new TestCustomer(1900,700);
+        TestCustomer customer = new TestCustomer(1750, 650);
        
 
 
