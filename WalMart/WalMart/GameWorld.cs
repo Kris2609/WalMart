@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using System.Threading;
 using WalMart.Astar;
+using System.Threading; 
 
 namespace WalMart
 {
@@ -39,6 +40,9 @@ namespace WalMart
             Thread cus2 = new Thread(customer.findPath);
             Thread cus3 = new Thread(customer.findPath);
 
+            cus1.Start();
+            cus2.Start();
+
         }
 
         /// <summary>
@@ -51,6 +55,7 @@ namespace WalMart
         {
 
             LoadContent();
+           
             sprtPos = new Vector2(1900, 700); 
 
 

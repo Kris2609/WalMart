@@ -18,6 +18,8 @@ namespace WalMart.Astar
             Array.Resize(ref items, items.Count() + 1);
             items[items.Count() - 1] = item;
         }
+       
+        
         public void removeItem(T item)
         {
             items[Array.IndexOf(items, item)] = items[items.Count() - 1];
@@ -54,5 +56,7 @@ namespace WalMart.Astar
                 yield return items[i];
             }
         }
+
+       
     }
 }
