@@ -89,68 +89,68 @@ namespace WalMart.Astar
                     {
                         //make a new tile
 
-                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
+                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
                         batch.Draw(banana, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i == 5 && j == 7) //walkeable false
                     {
                         //make a new tile
 
-                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
+                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
                         batch.Draw(burrito, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i == 5 && j == 8) //walkeable false
                     {
                         //make a new tile
 
-                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
+                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
                         batch.Draw(coffee, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i == 5 && j == 9) //walkeable false
                     {
                         //make a new tile
 
-                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
+                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
                         batch.Draw(pear, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i == 10 && j == 5)
                     {
-                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
+                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
                         batch.Draw(toiletPaper, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i == 10 && j == 6)
                     {
-                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
+                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
                         batch.Draw(towel, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i == 10 && j == 7)
                     {
-                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
+                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
                         batch.Draw(toothPaste, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i == 10 && j == 8)
                     {
-                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
+                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
                         batch.Draw(perfume, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i == 10 && j == 9)
                     {
-                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
+                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
                         batch.Draw(nailPolish, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i == 15 && j == 5)
                     {
-                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
+                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
                         batch.Draw(gold, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i == 15 && j == 6)
                     {
-                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
+                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
                         batch.Draw(watch, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i == 15 && j == 7)
                     {
-                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
+                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
                         batch.Draw(golf, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i == 15 && j == 8)
@@ -160,12 +160,12 @@ namespace WalMart.Astar
                     }
                     else if (i == 15 && j == 9)
                     {
-                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
+                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
                         batch.Draw(tv, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i == 8 && j == 1)
                     {
-                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
+                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
                         batch.Draw(granateLuncher, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i == 9 && j == 1)
@@ -180,12 +180,12 @@ namespace WalMart.Astar
                     }
                     else if (i == 11 && j == 1)
                     {
-                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
+                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
                         batch.Draw(hammer, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i == 12 && j == 1)
                     {
-                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, true);
+                        grid[i, j] = new Tile(new Vector2(i, j), new Vector2(i * 1.8f, j * 1.8f), TileBlock, false);
                         batch.Draw(screwDriver, new Rectangle(i * 70, j * 70, 70, 70), Color.White);
                     }
                     else if (i == 8 && j == 13)
@@ -247,7 +247,21 @@ namespace WalMart.Astar
             path1.SearchPath(new Vector2(23, 4), new Vector2(10, 11));
             path1.Draw(batch);
 
-          
+            Pathfinder path2 = new Pathfinder(grid);
+            path2.SearchPath(new Vector2(10, 11), new Vector2(5,5));
+            path2.Draw(batch);
+            Pathfinder path3 = new Pathfinder(grid);
+            path3.SearchPath(new Vector2(5,5), new Vector2(9, 1));
+            path3.Draw(batch);
+            Pathfinder path4 = new Pathfinder(grid);
+            path4.SearchPath(new Vector2(9,1),new Vector2(10, 1));
+            path4.Draw(batch);
+            Pathfinder path5 = new Pathfinder(grid);
+            path5.SearchPath(new Vector2(10, 1), new Vector2(15, 8));
+            path5.Draw(batch);
+            Pathfinder path6 = new Pathfinder(grid);
+            path6.SearchPath(new Vector2(15, 8), new Vector2(23, 9));
+            path6.Draw(batch);
             
         }
     }
