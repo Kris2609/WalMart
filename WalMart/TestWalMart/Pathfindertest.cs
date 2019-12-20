@@ -49,6 +49,16 @@ namespace TestWalMart
         [TestMethod]
         public void ManhattanDistancetest()
         {
+            //Arrange
+            Pathfinder pf = new Pathfinder(grid);
+            Vector2 value1 = new Vector2(13,5);
+            int expected = 18;
+
+            //ACT
+            int actualy = pf.ManhattanDistance(value1);
+
+            //Assert
+            Assert.AreEqual(expected, actualy);
 
         }
         [TestMethod]
