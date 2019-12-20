@@ -41,11 +41,11 @@ namespace WalMart
                     // get tempitem = ShoppingList array item
 
                     string tempItem = shoplist.items[tempnr];
-                    Vector2 tempLocation = shoplist.itemPosition[tempnr];
+                    
                     if (!list.Contains(tempItem))
                     {
                         list.addItem(tempItem);
-                        pos.addItem(tempLocation);
+                        
 
                     }
                     temp2 = list.CountTotal();

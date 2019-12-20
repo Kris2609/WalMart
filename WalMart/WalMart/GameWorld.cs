@@ -37,6 +37,7 @@ namespace WalMart
 
             Thread cus1 = new Thread(customer.findPath);
             Thread cus2 = new Thread(customer.findPath);
+            Thread cus3 = new Thread(customer.findPath);
 
         }
 

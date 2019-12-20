@@ -16,11 +16,11 @@ namespace WalMart.Astar
         public Vector2 goal;
         public Vector2 currentTile;
         
-        CustomList<Vector2> pathTiles = new CustomList<Vector2>();
+        public CustomList<Vector2> pathTiles = new CustomList<Vector2>();
 
         //create the lists that stores allready checked tiles
-        CustomList<Vector2> closedList = new CustomList<Vector2>();
-        CustomList<Vector2> openList = new CustomList<Vector2>();
+        public CustomList<Vector2> closedList = new CustomList<Vector2>();
+        public CustomList<Vector2> openList = new CustomList<Vector2>();
 
         public Pathfinder(Tile[,] grid)
         {

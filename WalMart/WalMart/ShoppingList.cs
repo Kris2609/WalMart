@@ -45,7 +45,7 @@ namespace WalMart
 
         public ShoppingList()
         {
-            items[0] = screwDriver + "screwDriver" + applev;
+            items[0] = screwDriver + "screwDriver";
             items[1] = apple + "apple";
             items[2] = banana + "banana";
             items[3] = burrito + "burrito";
